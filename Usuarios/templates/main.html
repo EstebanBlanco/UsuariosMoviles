@@ -1,0 +1,135 @@
+<!-- Page Loader -->
+<div class="page-loader-wrapper">
+    <div class="loader">
+        <div class="md-preloader pl-size-md">
+            <svg viewbox="0 0 75 75">
+                <circle cx="37.5" cy="37.5" r="33.5" class="pl-red" stroke-width="4" />
+            </svg>
+        </div>
+        <p>Cargando...</p>
+    </div>
+</div>
+<!-- #END# Page Loader -->
+<!-- Overlay For Sidebars -->
+<div class="overlay"></div>
+<!-- #END# Overlay For Sidebars -->
+<!-- Left Sidebar -->
+<section>
+    <aside id="leftsidebar" class="sidebar">
+        <!-- User Info -->
+        <div class="user-info">
+            <div class="image">
+                <img src="images/user.png" width="48" height="48" alt="User" />
+            </div>
+            <div class="info-container">
+                <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Nombre de Usuario</div>
+                <div class="email">correo electrónico</div>
+                <div class="btn-group user-helper-dropdown">
+                    <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
+                    <ul class="dropdown-menu pull-right">
+                        <li><a href="javascript:void(0);"><i class="material-icons">person</i>Perfil</a></li>
+                        <li role="seperator" class="divider"></li>
+                        <li><a href="javascript:void(0);"><i class="material-icons">group</i>Asistentes</a></li>
+                        <li role="seperator" class="divider"></li>
+                        <li><a href="javascript:void(0);"><i class="material-icons">input</i>Salir</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- #User Info -->
+        <!-- Menu -->
+        <div class="menu">
+            <ul class="list">
+                <li class="header">PANEL PRINCIPAL</li>
+                <li>
+                    <a href="#!/" class="active" onclick="closeSideBar()">
+                        <i class="material-icons">create</i>
+                        <span>Criterios y Estándares</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="closeSideBar()">
+                        <i class="material-icons">settings</i>
+                        <span>Plan de Trabajo</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#!/dimensiones" onclick="closeSideBar()">
+                        <i class="material-icons">dashboard</i>
+                        <span>Dimensiones</span>{{mensaje}}
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="closeSideBar()">
+                        <i class="material-icons">lock_open</i>
+                        <span>Permisos</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="closeSideBar()">
+                        <i class="material-icons">extension</i>
+                        <span>Componentes</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="closeSideBar()">
+                        <i class="material-icons">playlist_add_check</i>
+                        <span>Valoración</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="closeSideBar()">
+                        <i class="material-icons">pie_chart</i>
+                        <span>Informes</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="menu-toggle">
+                        <i class="material-icons">widgets</i>
+                        <span>Evidencias</span>
+                    </a>
+                    <ul class="ml-menu">
+                        <li>
+                            <a href="#" onclick="closeSideBar()">
+                                <i class="material-icons">attach_file</i>
+                                <span>Cuestionarios</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="closeSideBar()">
+                                <i class="material-icons">insert_drive_file</i>
+                                <span>Otro</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">
+                        <i class="material-icons col-light-blue">donut_large</i>
+                        <span>Acerca de</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- #Menu -->
+        <!-- Footer -->
+        <div class="legal">
+            <div class="copyright">
+                &copy; 2017 <a href="javascript:void(0);">Acreditación de Carreras <br> Administración de Empresas</a>.
+            </div>
+            <div class="version">
+                <b>Version: </b> 0.1
+            </div>
+        </div>
+        <!-- #Footer -->
+    </aside>
+    <!-- #END# Left Sidebar -->
+</section>
+
+<!--Ventanas emergentes-->
+<section class="content">
+    <div class="container-fluid">
+        <div ng-view></div>
+    </div>
+</section>
+<!--END VENTANAS EMERGENTES-->
