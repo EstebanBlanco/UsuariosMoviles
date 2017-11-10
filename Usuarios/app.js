@@ -4,13 +4,14 @@ angular.module("appModule",['ngRoute'])
     .config(['$routeProvider',function($routeProvider){
     $routeProvider
         .when('/', {
-            templateUrl: "templates/login.html"
+            templateUrl: "templates/registration.html"
         })
         .when('/home',{
             templateUrl: "templates/home.html"
         })
         .when('/register', {
-            templateUrl: "templates/registration.html"
+            templateUrl: "templates/registration.html",
+            controller: "loginController"
         })
         .otherwise({
             redirectTo: '/'

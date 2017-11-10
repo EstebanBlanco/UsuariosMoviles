@@ -1,0 +1,71 @@
+Registro estudiantes
+	-id cedula (once caracteres)
+	-nombre
+	-apellido1
+	-apellido2
+	-contraseña
+	-correo (validar)
+	-carnet
+	-estado civil
+	-fecha nacimiento
+	-sexo M o F
+	direccion
+
+Registro funcionarios
+	licencias
+	grado academico
+
+a1,a2,a3,a4
+b1,b2,b3,b4
+c1,c2
+d1,d2,d3
+e1,e2
+
+
+datos que pueden estar en la base de datos
+	sede
+	carrera
+	
+->secretaria habilita login para funcionarios (usuario, contraseña, correo, selecciona los roles)
+->hablar con Esteban como asignar apps a cada user
+->interfaz para superuser para dar permisos de administrador
+->un funcionario tiene varias sedes y carreras
+
+crear tabla rol y licencias
+->cada sede tiene un codigo postal
+
+[8:53 AM, 10/13/2017] Esteban Blanco: $http({
+
+                method: "PUT",
+
+                url: 'http://localhost:8080/registroEstudiantes',
+
+                data: {form}
+            })
+
+            .then(function successCallback(response) {
+
+            if (response.data.message == 200){
+
+                //Exito
+//
+                $http.defaults.headers.common.Authorization = 'Bearer ' + response.data.data.token;
+
+                saveSession(response.data.data);
+
+                
+                //Redirigir
+ 
+                window.location.href ="http://localhost:8080/";
+
+            }
+
+            else{
+
+                console.log(response.data.data);
+
+                alert(response.data.data);
+
+            }
+
+            });

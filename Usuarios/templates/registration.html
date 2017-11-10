@@ -1,44 +1,86 @@
 <div class="signup-box">
-    <div class="logo">
-        <a href="javascript:void(0);">Admin<b>BSB</b></a>
-        <small>Admin BootStrap Based - Material Design</small>
-    </div>
-    <div class="card">
+    <div class="card" style="
+    text-align: center;
+    width: 30%;
+    margin: auto;
+    margin-top: 10%;
+    border-radius: 5px;">
         <div class="body">
             <form id="sign_up" method="POST" novalidate="novalidate">
-                <div class="msg">Register a new membership</div>
+                <div class="msg">Nuevo registro</div>
+
+                <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="material-icons">fingerprint</i>
+                        </span>
+                    <div class="form-line">
+                        <input type="text" class="form-control" name="id" minlength="11" placeholder="Cédula" required="" autofocus="" aria-required="true">
+                    </div>
+                </div>
+
                 <div class="input-group">
                         <span class="input-group-addon">
                             <i class="material-icons">person</i>
                         </span>
                     <div class="form-line">
-                        <input type="text" class="form-control" name="namesurname" placeholder="Name Surname" required="" autofocus="" aria-required="true">
+                        <input type="text" class="form-control" name="name" placeholder="Nombre" required="" autofocus="" aria-required="true">
                     </div>
                 </div>
+
+                <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="material-icons">person</i>
+                        </span>
+                    <div class="form-line">
+                        <input type="text" class="form-control" name="lastname1" placeholder="Apellido 1" required="" autofocus="" aria-required="true">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="material-icons">person</i>
+                        </span>
+                    <div class="form-line">
+                        <input type="text" class="form-control" name="lastname2" placeholder="Apellido 2" required="" autofocus="" aria-required="true">
+                    </div>
+                </div>
+
                 <div class="input-group">
                         <span class="input-group-addon">
                             <i class="material-icons">email</i>
                         </span>
                     <div class="form-line">
-                        <input type="email" class="form-control" name="email" placeholder="Email Address" required="" aria-required="true">
+                        <input type="email" class="form-control" name="email" placeholder="Dirección de correo" required="" aria-required="true">
                     </div>
                 </div>
+
                 <div class="input-group">
                         <span class="input-group-addon">
                             <i class="material-icons">lock</i>
                         </span>
                     <div class="form-line">
-                        <input type="password" class="form-control" name="password" minlength="6" placeholder="Password" required="" aria-required="true">
+                        <input type="password" class="form-control" name="password" minlength="12" placeholder="Password" required="" aria-required="true">
                     </div>
                 </div>
+
                 <div class="input-group">
                         <span class="input-group-addon">
-                            <i class="material-icons">lock</i>
+                            <i class="material-icons">work</i>
                         </span>
                     <div class="form-line">
-                        <input type="password" class="form-control" name="confirm" minlength="6" placeholder="Confirm Password" required="" aria-required="true">
+                        <input type="text" class="form-control" name="carnet" placeholder="Carné de estudiante" required="" autofocus="" aria-required="true">
                     </div>
                 </div>
+
+                <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="material-icons">home</i>
+                        </span>
+                    <div class="form-line">
+                        <input type="text" class="form-control" name="adress" placeholder="Dirección" required="" autofocus="" aria-required="true">
+                    </div>
+                </div>
+
                 <div class="form-group">
                     <input type="checkbox" name="terms" id="terms" class="filled-in chk-col-pink">
                     <label for="terms">I read and agree to the <a href="javascript:void(0);">terms of usage</a>.</label>
