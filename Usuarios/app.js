@@ -1,14 +1,16 @@
 //Declaracion de variable app que contiene como referencia el modulo acreditacion
 //Se le inyecta ngRoute el cual permite manejar rutas dentro de un mismo archivo HTML
-angular.module("appModule",['ngRoute','LocalStorageModule'])
-
-.config(['$routeProvider',function($routeProvider){
+angular.module("appModule",['ngRoute'])
+    .config(['$routeProvider',function($routeProvider){
     $routeProvider
+        .when('/', {
+            templateUrl: "templates/login.html"
+        })
         .when('/home',{
             templateUrl: "templates/home.html"
         })
-        .when('/', {
-            templateUrl: "templates/login.html"
+        .when('/register', {
+            templateUrl: "templates/registration.html"
         })
         .otherwise({
             redirectTo: '/'

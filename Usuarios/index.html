@@ -60,59 +60,23 @@
 </head>
 
 <body class="theme-blue">
-<!-- Top Bar -->
-<nav class="navbar" style="background-color: #000033">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <div class="navbar-brand ">
-                <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
-                <a href="javascript:void(0);" class="bars"></a>
-                <img src="images/TEC-fondo-azul.png" alt="logo">
+    <!-- Top Bar -->
+    <nav class="navbar" style="background-color: #000033">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div class="navbar-brand ">
+                    <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
+                    <a href="javascript:void(0);" class="bars"></a>
+                    <img src="images/TEC-fondo-azul.png" alt="logo">
+                </div>
             </div>
         </div>
-    </div>
-</nav>
-<!-- #Top Bar -->
+    </nav>
+    <!-- #Top Bar -->
 
-    <div class="card" style="
-    text-align: center;
-    width: 30%;
-    margin: auto;
-    margin-top: 10%;
-    border-radius: 5px;">
-        <img class="img-fluid" src="templates/logocomunidad.png" width="200" height="250" alt="logo">
-        <div class="card-body">
-            <div class="body">
-                <form id="sign_in" method="POST" novalidate="novalidate">
-                    <div class="input-group">
-                    <span class="input-group-addon">
-                        <i class="material-icons">person</i>
-                    </span>
-                        <div class="form-line">
-                            <input type="text" class="form-control" name="username" placeholder="Nombre de usuario" required="" autofocus="" aria-required="true">
-                        </div>
-                    </div>
-                    <div class="input-group">
-                    <span class="input-group-addon">
-                        <i class="material-icons">lock</i>
-                    </span>
-                        <div class="form-line">
-                            <input type="password" class="form-control" name="password" placeholder="Contraseña" required="" aria-required="true">
-                        </div>
-                    </div>
-                    <div class="row justify-content-md-center">
-                        <div class="col-xs-6 align-center">
-                            <button class="btn btn-block btn-primary waves-effect" type="submit">Ingresar</button>
-                        </div>
-                        <div class="col-xs-6 align-center">
-                            <button class="btn btn-block btn-default waves-effect">Registrarse</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
+    <div class="container-fluid">
+        <div ng-view></div>
     </div>
-    <!--<div ng-view></div>-->
 
     <!-- Jquery Core Js -->
     <script src="plugins/jquery/jquery.min.js"></script>
@@ -133,9 +97,6 @@
      <script src="app.js"></script>
 
     <!--Llamada de todos los controllers-->
-     <!--<script src="controllers/dimensiones_Controller.js"></script>-->
-     <!--<script src="controllers/componentes_Controller.js"></script>-->
-     <!--<script src="mainPage_Controller.js"></script>-->
     <!--<script src="controllers/Login.js"></script>-->
 
     <!-- Bootstrap Core Js -->
@@ -205,6 +166,8 @@
     <script src="plugins/node-waves/waves.js"></script>
 
     <!--<script src="js/pages/forms/advanced-form-elements.js"></script>-->
+
+
 </body>
 
 </html>
