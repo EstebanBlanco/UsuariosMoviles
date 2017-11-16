@@ -6,13 +6,13 @@ Registro estudiantes
 	-contraseña
 	-correo (validar)
 	-carnet
-	-estado civil
-	-fecha nacimiento
-	-sexo M o F
-	direccion
+	*estado civil
+	*fecha nacimiento
+	*sexo M o F
+	-direccion
 
 Registro funcionarios
-	licencias
+	*licencias
 	grado academico
 
 a1,a2,a3,a4
