@@ -4,18 +4,19 @@ angular.module("appModule",['ngRoute'])
     .config(['$routeProvider',function($routeProvider){
     $routeProvider
         .when('/', {
-            templateUrl: "templates/registration.html"
+            templateUrl: "templates/registration_official.html"
         })
         .when('/home',{
             templateUrl: "templates/home.html"
         })
-        .when('/register', {
-            templateUrl: "templates/registration.html",
-            controller: "loginController"
+        .when('/registro_estudiantes', {
+            templateUrl: "templates/registration_student.html"
         })
-        .when('/secretary', {
-            templateUrl: "templates/secretary.html",
-            controller: "loginController"
+        .when('/registro_asistente', {
+            templateUrl: "templates/secretary.html"
+        })
+        .when('/registro_funcionarios', {
+            templateUrl: "templates/registration_official.html"
         })
         .otherwise({
             redirectTo: '/'

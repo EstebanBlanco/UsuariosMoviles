@@ -1,0 +1,215 @@
+<div class="signup-box">
+    <div class="card" style="
+    text-align: center;
+    width: 30%;
+    margin: auto;
+    margin-top: 10%;
+    border-radius: 5px;">
+        <div class="body">
+            <form id="sign_up" method="POST" novalidate="novalidate">
+                <small class="card-inside-title" style="margin-bottom: 7px">Nuevo registro de funcionario(a)</small>
+                <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="material-icons">fingerprint</i>
+                        </span>
+                    <div class="form-line">
+                        <input type="text" class="form-control" name="id" minlength="11" placeholder="Cédula" required="" autofocus="" aria-required="true">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="material-icons">person</i>
+                        </span>
+                    <div class="form-line">
+                        <input type="text" class="form-control" name="name" placeholder="Nombre" required="" autofocus="" aria-required="true">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="material-icons">person</i>
+                        </span>
+                    <div class="form-line">
+                        <input type="text" class="form-control" name="lastname1" placeholder="Apellido 1" required="" autofocus="" aria-required="true">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="material-icons">person</i>
+                        </span>
+                    <div class="form-line">
+                        <input type="text" class="form-control" name="lastname2" placeholder="Apellido 2" required="" autofocus="" aria-required="true">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="material-icons">email</i>
+                        </span>
+                    <div class="form-line">
+                        <input type="email" class="form-control" name="email" placeholder="Dirección de correo" required="" aria-required="true">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="material-icons">lock</i>
+                        </span>
+                    <div class="form-line">
+                        <input type="password" class="form-control" name="password" minlength="12" placeholder="Password" required="" aria-required="true">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="material-icons">work</i>
+                        </span>
+                    <div class="form-line">
+                        <input type="text" class="form-control" name="carnet" placeholder="Carné de estudiante" required="" autofocus="" aria-required="true">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="material-icons">home</i>
+                        </span>
+                    <div class="form-line">
+                        <input type="text" class="form-control" name="adress" placeholder="Dirección" required="" autofocus="" aria-required="true">
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <div class="msg" style="margin-bottom: 7px">Estado civil</div>
+                    <input name="group_estado" type="radio" id="radio_soltero" class="radio-col-light-green">
+                    <label for="radio_soltero">Soltero (a)</label>
+                    <input name="group_estado" type="radio" id="radio_casado" class="radio-col-light-green">
+                    <label for="radio_casado">Casado (a)</label>
+                    <input name="group_estado" type="radio" id="radio_viudo" class="radio-col-light-green">
+                    <label for="radio_viudo">Otro</label>
+                </div>
+
+                <div class="form-group">
+                    <div class="msg" style="margin-bottom: 7px">Fecha de nacimiento</div>
+                    <div class="form-line">
+                        <input type="text" class="datepicker form-control" placeholder="Please choose a date..." data-dtp="dtp_NWVMs">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="msg" style="margin-bottom: 7px">Sexo</div>
+                    <input name="group_sexo" type="radio" id="radio_masculino" class="radio-col-light-green">
+                    <label for="radio_masculino">Masculino</label>
+                    <input name="group_sexo" type="radio" id="radio_femenino" class="radio-col-light-green">
+                    <label for="radio_femenino">Femenino</label>
+                    <input name="group_sexo" type="radio" id="radio_otro" class="radio-col-light-green">
+                    <label for="radio_otro">Otro</label>
+                </div>
+
+                <div class="msg" style="margin-bottom: 7px">Licencias</div>
+                <div class="form-group">
+                    <div class="btn-group bootstrap-select form-control show-tick">
+                        <button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" title="-- Please select --" aria-expanded="false">
+                            <span class="filter-option pull-left">-- Please select --</span>&nbsp;<span class="bs-caret">
+                            <span class="caret"></span>
+                        </span>
+                        </button><div class="dropdown-menu open" style="max-height: 428px; overflow: hidden; min-height: 92px;">
+                        <ul class="dropdown-menu inner" role="menu" style="max-height: 418px; overflow-y: auto; min-height: 82px;">
+                            <li data-original-index="0" class="selected"><a tabindex="0" class="" style="" data-tokens="null">
+                                <span class="text">-- Please select --</span>
+                                <span class="glyphicon glyphicon-ok check-mark"></span>
+                            </a>
+                            </li>
+                            <li data-original-index="1"><a tabindex="0" class="" style="" data-tokens="null">
+                                <span class="text">10</span>
+                                <span class="glyphicon glyphicon-ok check-mark"></span>
+                            </a>
+                            </li>
+                            <li data-original-index="2"><a tabindex="0" class="" style="" data-tokens="null">
+                                <span class="text">20</span>
+                                <span class="glyphicon glyphicon-ok check-mark"></span>
+                            </a>
+                            </li>
+                            <li data-original-index="3"><a tabindex="0" class="" style="" data-tokens="null">
+                                <span class="text">30</span><span class="glyphicon glyphicon-ok check-mark">
+                            </span>
+                            </a>
+                            </li>
+                            <li data-original-index="4">
+                                <a tabindex="0" class="" style="" data-tokens="null">
+                                    <span class="text">40</span><span class="glyphicon glyphicon-ok check-mark"></span>
+                                </a>
+                            </li>
+                            <li data-original-index="5">
+                                <a tabindex="0" class="" style="" data-tokens="null"><span class="text">50</span>
+                                    <span class="glyphicon glyphicon-ok check-mark"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                        <select class="form-control show-tick" tabindex="-98">
+                            <option value="">-- Please select --</option>
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                            <option value="30">30</option>
+                            <option value="40">40</option>
+                            <option value="50">50</option>
+                        </select>
+                    </div>
+                    <!--<input type="checkbox" id="md_checkbox_a" class="filled-in chk-col-indigo" checked="">-->
+                    <!--<label for="md_checkbox_a">Clase A</label>-->
+                    <!--<div class="form-line">-->
+                        <!--<input name="group_licencia_a" type="radio" id="radio_a1" class="radio-col-light-green">-->
+                        <!--<label for="radio_a1">A1</label>-->
+                        <!--<input name="group_licencia_a" type="radio" id="radio_a2" class="radio-col-light-green">-->
+                        <!--<label for="radio_a2">A2</label>-->
+                        <!--<input name="group_licencia_a" type="radio" id="radio_a3" class="radio-col-light-green">-->
+                        <!--<label for="radio_a3">A3</label>-->
+                        <!--<input name="group_licencia_a" type="radio" id="radio_a4" class="radio-col-light-green">-->
+                        <!--<label for="radio_a4">A4</label>-->
+                    <!--</div>-->
+                    <!--<input type="checkbox" id="md_checkbox_b" class="filled-in chk-col-indigo" checked="">-->
+                    <!--<label for="md_checkbox_b">Clase B</label>-->
+                    <!--<div class="form-line">-->
+                        <!--<input name="group_licencia_b" type="radio" id="radio_b1" class="radio-col-light-green">-->
+                        <!--<label for="radio_b1">B1</label>-->
+                        <!--<input name="group_licencia_b" type="radio" id="radio_b2" class="radio-col-light-green">-->
+                        <!--<label for="radio_b2">B2</label>-->
+                        <!--<input name="group_licencia_b" type="radio" id="radio_b3" class="radio-col-light-green">-->
+                        <!--<label for="radio_b3">B3</label>-->
+                        <!--<input name="group_licencia_b" type="radio" id="radio_b4" class="radio-col-light-green">-->
+                        <!--<label for="radio_b4">B4</label>-->
+                    <!--</div>-->
+                    <!--<div class="form-line">-->
+                        <!--<input name="group_licencia_c" type="radio" id="radio_c1" class="radio-col-light-green">-->
+                        <!--<label for="radio_c1">C1</label>-->
+                        <!--<input name="group_licencia_c" type="radio" id="radio_c2" class="radio-col-light-green">-->
+                        <!--<label for="radio_c2">C2</label>-->
+                    <!--</div>-->
+                    <!--<div class="form-line">-->
+                        <!--<input name="group_licencia_d" type="radio" id="radio_d1" class="radio-col-light-green">-->
+                        <!--<label for="radio_d1">D1</label>-->
+                        <!--<input name="group_licencia_d" type="radio" id="radio_d2" class="radio-col-light-green">-->
+                        <!--<label for="radio_d2">D2</label>-->
+                        <!--<input name="group_licencia_d" type="radio" id="radio_d3" class="radio-col-light-green">-->
+                        <!--<label for="radio_d3">D3</label>-->
+                    <!--</div>-->
+                    <!--<div class="form-line">-->
+                        <!--<input name="group_licencia_e" type="radio" id="radio_e1" class="radio-col-light-green">-->
+                        <!--<label for="radio_e1">E1</label>-->
+                        <!--<input name="group_licencia_e" type="radio" id="radio_e2" class="radio-col-light-green">-->
+                        <!--<label for="radio_e2">E2</label>-->
+                    <!--</div>-->
+                </div>
+
+                <div class="form-group">
+                    <input type="checkbox" name="terms" id="terms" class="filled-in chk-col-pink">
+                    <label for="terms">He leído y estoy de acuerdo con los <a href="javascript:void(0);">terminos de uso</a>.</label>
+                </div>
+                <button class="btn btn-block btn-lg bg-pink waves-effect" type="submit">Registrarse</button>
+            </form>
+        </div>
+    </div>
+</div>
