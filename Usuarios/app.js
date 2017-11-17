@@ -13,6 +13,10 @@ angular.module("appModule",['ngRoute'])
             templateUrl: "templates/registration.html",
             controller: "loginController"
         })
+        .when('/secretary', {
+            templateUrl: "templates/secretary.html",
+            controller: "loginController"
+        })
         .otherwise({
             redirectTo: '/'
       });
