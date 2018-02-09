@@ -13,5 +13,10 @@
   "bugs": {
     "url": "https://github.com/gurayyarar/AdminBSBMaterialDesign/issues"
   },
-  "homepage": "https://github.com/gurayyarar/AdminBSBMaterialDesign#readme"
+  "homepage": "https://github.com/gurayyarar/AdminBSBMaterialDesign#readme",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "bootstrap-select": "^1.12.4",
+    "express": "^4.16.2"
+  }
 }

@@ -4,10 +4,10 @@ angular.module("appModule",['ngRoute'])
     .config(['$routeProvider',function($routeProvider){
     $routeProvider
         .when('/', {
-            templateUrl: "templates/registration_official.html"
+            templateUrl: "templates/secretary.html"
         })
         .when('/home',{
-            templateUrl: "templates/home.html"
+            templateUrl: "templates/home.html",
         })
         .when('/registro_estudiantes', {
             templateUrl: "templates/registration_student.html"
