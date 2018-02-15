@@ -1,0 +1,65 @@
+
+<div class="admins-box">
+    <div class="card" style="text-align: center;width: 30%; margin: auto; margin-top: 10%; border-radius: 5px;">
+        <div class="body">
+            <form id="admin" method="POST" novalidate="novalidate">
+
+                <h3>Administradores</h3><br>
+
+                <!--Seleccionar sede-->
+                <h4 class="panel-title">Seleccione Sede </h4>
+                <div class="btn-group bootstrap-select form-control show-tick dropup">
+                    <button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" title="-- Please select --" aria-expanded="false"><span class="filter-option pull-left">-- Please select --</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button>
+                    <select  id="select-sede" class="form-control show-tick" tabindex="-98"></select>
+                </div><br><br>
+
+                <!--Seleccionar Funcionario-->
+                <h4 class="panel-title">Seleccione Funcionario </h4>
+                <div class="btn-group bootstrap-select form-control show-tick dropup">
+                    <button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" title="-- Please select --" aria-expanded="false"><span class="filter-option pull-left">-- Please select --</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button>
+                    <select  id="select-sede" class="form-control show-tick" tabindex="-98"></select>
+                </div><br><br>
+
+                <!--Asignar Aplicacion-->
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">Asignar Aplicación</h4>
+                    </div>
+                    <div class="panel-body">
+                        <h5 class="panel-title">Seleccione Aplicacion </h5>
+                        <div class="btn-group bootstrap-select form-control show-tick dropup">
+                            <button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" title="-- Please select --" aria-expanded="false"><span class="filter-option pull-left">-- Please select --</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button>
+                            <select  id="select-sede" class="form-control show-tick" tabindex="-98"></select>
+                        </div><br><br>
+                        
+                        <button type="button" class="btn btn-block btn-lg bg-pink waves-effect" data-toggle="modal" data-target="#defaultModal">Asignar</button>
+                        
+                    </div>
+                </div><br>
+  
+                <!--Quitar Aplicacion-->
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <h4 class="panel-title">Quitar aplicaciones asignadas</h4>
+                    </div>
+                    <div class="panel-body">
+                        <h5 class="panel-title">Aplicaciones Asignadas</h5>
+                        <div class="list-group">
+                            <a href="#" class="list-group-item disabled">
+                                App 1
+                            </a>
+                            <a href="#" class="list-group-item">App 2</a>
+                            <a href="#" class="list-group-item">App 3</a>
+                            <a href="#" class="list-group-item">App 4</a>
+                            <a href="#" class="list-group-item">App 5</a>
+                          </div>
+                    </div>
+
+                    <button type="button" class="btn btn-block btn-lg bg-pink waves-effect" data-toggle="modal" data-target="#defaultModal">Quitar</button>
+
+                </div><br>
+
+            </form>
+        </div>
+    </div>
+</div>
