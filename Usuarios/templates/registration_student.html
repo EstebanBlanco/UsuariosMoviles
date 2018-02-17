@@ -1,118 +1,190 @@
 <div class="signup-box">
     <div class="card" style="
     text-align: center;
-    width: 30%;
+    width: 60%;
     margin: auto;
     margin-top: 10%;
+    margin-bottom: 5%;
     border-radius: 5px;">
         <div class="body">
             <form id="sign_up" method="POST" novalidate="novalidate">
                 <small class="card-inside-title" style="margin-bottom: 7px">Nuevo registro de estudiante</small>
-                <div class="input-group">
-                        <span class="input-group-addon">
-                            <i class="material-icons">fingerprint</i>
-                        </span>
-                    <div class="form-line">
-                        <input type="text" class="form-control" name="id" minlength="11" placeholder="Cédula" required="" autofocus="" aria-required="true">
-                    </div>
-                </div>
 
-                <div class="input-group">
+                <h2 class="card-inside-title">Datos personales</h2>
+
+                <div class="row clearfix">
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <div class="input-group">
+                            <span class="input-group-addon">
+                                <i class="material-icons">person</i>
+                            </span>
+                                <div class="form-line">
+                                    <input type="text" class="form-control" name="name" placeholder="Nombre completo" required="" autofocus="" aria-required="true">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <div class="input-group">
+                            <span class="input-group-addon">
+                                <i class="material-icons">person</i>
+                            </span>
+                                <div class="form-line">
+                                    <input type="text" class="form-control" name="lastname1" placeholder="Primer apellido" required="" autofocus="" aria-required="true">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <div class="input-group">
                         <span class="input-group-addon">
                             <i class="material-icons">person</i>
                         </span>
-                    <div class="form-line">
-                        <input type="text" class="form-control" name="name" placeholder="Nombre" required="" autofocus="" aria-required="true">
+                                <div class="form-line">
+                                    <input type="text" class="form-control" name="lastname2" placeholder="Segundo apellido" required="" autofocus="" aria-required="true">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="input-group">
-                        <span class="input-group-addon">
-                            <i class="material-icons">person</i>
-                        </span>
-                    <div class="form-line">
-                        <input type="text" class="form-control" name="lastname1" placeholder="Apellido 1" required="" autofocus="" aria-required="true">
+                <div class="row clearfix">
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">fingerprint</i>
+                                </span>
+                                <div class="form-line">
+                                    <input type="text" class="form-control" name="id" minlength="11" placeholder="Cédula" required="" autofocus="" aria-required="true">
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-
-                <div class="input-group">
-                        <span class="input-group-addon">
-                            <i class="material-icons">person</i>
-                        </span>
-                    <div class="form-line">
-                        <input type="text" class="form-control" name="lastname2" placeholder="Apellido 2" required="" autofocus="" aria-required="true">
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="material-icons">date_range</i>
+                    </span>
+                                <div class="form-line">
+                                    <input type="text" class="datepicker form-control" placeholder="Fecha de nacimiento" data-dtp="dtp_NWVMs">
+                                </div>
+                                <!--<div class="form-line">-->
+                                    <!--<input type="text" class="form-control date" placeholder="Fecha de nacimiento">-->
+                                <!--</div>-->
+                            </div>
+                        </div>
                     </div>
-                </div>
-
-                <div class="input-group">
-                        <span class="input-group-addon">
-                            <i class="material-icons">email</i>
-                        </span>
-                    <div class="form-line">
-                        <input type="email" class="form-control" name="email" placeholder="Dirección de correo" required="" aria-required="true">
-                    </div>
-                </div>
-
-                <div class="input-group">
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <div class="input-group">
                         <span class="input-group-addon">
                             <i class="material-icons">lock</i>
                         </span>
-                    <div class="form-line">
-                        <input type="password" class="form-control" name="password" minlength="12" placeholder="Password" required="" aria-required="true">
+                                <div class="form-line">
+                                    <input type="password" class="form-control" name="password" minlength="12" placeholder="Contraseña" required="" aria-required="true">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="input-group">
-                        <span class="input-group-addon">
-                            <i class="material-icons">work</i>
-                        </span>
-                    <div class="form-line">
-                        <input type="text" class="form-control" name="carnet" placeholder="Carné de estudiante" required="" autofocus="" aria-required="true">
-                    </div>
-                </div>
-
-                <div class="input-group">
+                <div class="row clearfix">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <div class="input-group">
                         <span class="input-group-addon">
                             <i class="material-icons">home</i>
                         </span>
-                    <div class="form-line">
-                        <input type="text" class="form-control" name="adress" placeholder="Dirección" required="" autofocus="" aria-required="true">
+                                <div class="form-line">
+                                    <textarea rows="4" class="form-control no-resize" placeholder="Dirección exacta"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="row clearfix">
+                            <div class="col-sm-10 col-sm-offset-1">
+                                <div class="form-group">
+                                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="material-icons">email</i>
+                        </span>
+                                        <div class="form-line">
+                                            <input type="email" class="form-control" name="email" placeholder="Dirección de correo" required="" aria-required="true">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row clearfix">
+                            <div class="col-sm-10 col-sm-offset-1">
+                                <div class="form-group">
+                                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="material-icons">account_box</i>
+                        </span>
+                                        <div class="form-line">
+                                            <input type="text" class="form-control" name="carnet" placeholder="Carné estudiante" required="" autofocus="" aria-required="true">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-
-                <div class="form-group">
-                    <div class="msg" style="margin-bottom: 7px">Estado civil</div>
-                    <input name="group_estado" type="radio" id="radio_soltero" class="radio-col-light-green">
-                    <label for="radio_soltero">Soltero (a)</label>
-                    <input name="group_estado" type="radio" id="radio_casado" class="radio-col-light-green">
-                    <label for="radio_casado">Casado (a)</label>
-                    <input name="group_estado" type="radio" id="radio_viudo" class="radio-col-light-green">
-                    <label for="radio_viudo">Otro</label>
-                </div>
-
-                <div class="form-group">
-                    <div class="msg" style="margin-bottom: 7px">Fecha de nacimiento</div>
-                    <div class="form-line">
-                        <input type="text" class="datepicker form-control" placeholder="Please choose a date..." data-dtp="dtp_NWVMs">
+                <div class="row clearfix">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <div class="form-group">
+                                <div class="msg" style="margin-bottom: 7px">Sexo</div>
+                                <input name="group_sexo" type="radio" id="radio_masculino" class="radio-col-light-green">
+                                <label for="radio_masculino">Masculino</label>
+                                <input name="group_sexo" type="radio" id="radio_femenino" class="radio-col-light-green">
+                                <label for="radio_femenino">Femenino</label>
+                                <input name="group_sexo" type="radio" id="radio_otro" class="radio-col-light-green">
+                                <label for="radio_otro">Otro</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <div class="msg" style="margin-bottom: 7px">Estado civil</div>
+                            <input name="group_estado" type="radio" id="radio_soltero" class="radio-col-light-green">
+                            <label for="radio_soltero">Soltero (a)</label>
+                            <input name="group_estado" type="radio" id="radio_casado" class="radio-col-light-green">
+                            <label for="radio_casado">Casado (a)</label>
+                            <input name="group_estado" type="radio" id="radio_viudo" class="radio-col-light-green">
+                            <label for="radio_viudo">Otro</label>
+                        </div>
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <div class="msg" style="margin-bottom: 7px">Sexo</div>
-                    <input name="group_sexo" type="radio" id="radio_masculino" class="radio-col-light-green">
-                    <label for="radio_masculino">Masculino</label>
-                    <input name="group_sexo" type="radio" id="radio_femenino" class="radio-col-light-green">
-                    <label for="radio_femenino">Femenino</label>
-                    <input name="group_sexo" type="radio" id="radio_otro" class="radio-col-light-green">
-                    <label for="radio_otro">Otro</label>
+                <div class="row clearfix">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <input type="checkbox" name="terms" id="terms" class="filled-in chk-col-pink">
+                            <label for="terms">He leído y estoy de acuerdo con los <a href="javascript:void(0);">terminos de uso</a>.</label>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <button class="btn btn-block btn-lg bg-pink waves-effect" type="submit">Registrarse</button>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <button class="btn btn-block btn-lg bg-blue waves-effect" type="submit">Cancelar</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="form-group">
-                    <input type="checkbox" name="terms" id="terms" class="filled-in chk-col-pink">
-                    <label for="terms">He leído y estoy de acuerdo con los <a href="javascript:void(0);">terminos de uso</a>.</label>
-                </div>
-                <button class="btn btn-block btn-lg bg-pink waves-effect" type="submit">Registrarse</button>
             </form>
         </div>
     </div>
