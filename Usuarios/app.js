@@ -7,7 +7,7 @@ angular.module('appModule',["ngRoute"])
             })
             .when('/registro_estudiantes', {
                 templateUrl: "Views/registration_student.html",
-                //controller: "studentCtrl"
+                controller: "studentCtrl"
             })
             .when('/registro_asistente', {
                 templateUrl: "Views/secretary.html",
@@ -15,7 +15,7 @@ angular.module('appModule',["ngRoute"])
             })
             .when('/registro_funcionarios', {
                 templateUrl: "Views/registration_official.html",
-                //controller: "officialCtrl"
+                controller: "officialCtrl"
             })
             .otherwise({
                 redirectTo: '/'

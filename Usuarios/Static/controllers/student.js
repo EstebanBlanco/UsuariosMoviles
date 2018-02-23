@@ -1,4 +1,4 @@
-var app = angular.module('appModule',["ngRoute","ngResource"])
+angular.module('appModule')
     .controller('studentCtrl', function($scope, $http, $location, $window) {
 
     });
