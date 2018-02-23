@@ -65,6 +65,8 @@
     <link href="Static/css/styles.css" rel="stylesheet">
 </head>
 
+
+
 <body class="theme-blue">
     <!-- Top Bar -->
     <nav class="navbar" style="background-color: #000033">
@@ -79,19 +81,21 @@
         </div>
     </nav>
     <!-- #Top Bar -->
-    <div class="container-fluid">
-        <div ng-view></div>
-    </div>
+
+    <section>
+            <div class="container-fluid">
+                <div ng-view></div>
+            </div>
+    </section>
 
     <!-- SCRIPTS -->
+    <!-- Jquery Core Js -->
+    <script src="plugins/jquery/jquery.min.js"></script>
     <!--AngularJS File-->
-    <script src="js/librerias/angular.min.js"></script>
+    <script type="text/javascript" src="js/librerias/angular.min.js"></script>
 
     <!--AngularJS ngRoute Inyector File-->
     <script src="js/librerias/angular-route.min.js"></script>
-
-    <!-- Jquery Core Js -->
-    <script src="node_modules/jquery/dist/jquery.min.js"></script>
 
     <!-- Bootstrap Core Js -->
     <!--<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>-->
@@ -152,9 +156,15 @@
 
     <script src="plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
     <script src="js/pages/forms/basic-form-elements.js"></script>
-    <script src="js/pages/forms/advanced-form-elements.js"></script>
 
     <!--Llamada del modulo APP.JS-->
     <script src="app.js"></script>
+
+    <!--Llamada de los CONTROLADORES-->
+    <script src="hola/controllers/secretary.js"></script>
+
+
+
+
 </body>
 </html>

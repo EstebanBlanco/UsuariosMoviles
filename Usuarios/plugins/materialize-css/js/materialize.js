@@ -1176,7 +1176,7 @@ $(document).ready(function(){
 
     $.fn.parallax = function () {
       var window_width = $(window).width();
-      // Parallax Scripts
+      // Parallax hola
       return this.each(function(i) {
         var $this = $(this);
         $this.addClass('parallax');

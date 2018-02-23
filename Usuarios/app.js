@@ -1,9 +1,9 @@
-angular.module("appModule",['ngRoute'])
+angular.module('appModule',["ngRoute"])
     .config(['$routeProvider',function($routeProvider){
     $routeProvider
         .when('/', {
-            templateUrl: "Views/login.html",
-            controller: "registrationOfficialController"
+            templateUrl: "Views/secretary.html",
+            controller: 'secretary'
         })
         .when('/home',{
             templateUrl: "Views/home.html"
@@ -21,4 +21,3 @@ angular.module("appModule",['ngRoute'])
             redirectTo: '/'
       });
 }]);
-
