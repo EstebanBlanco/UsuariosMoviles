@@ -3,22 +3,19 @@ angular.module('appModule',["ngRoute"])
     $routeProvider
         .when('/', {
             templateUrl: "Views/login.html",
-            controller: "loginController"
-        })
-        .when('/login', {
-            templateUrl: "Views/login.html"
-        })
-        .when('/home',{
-            templateUrl: "Views/home.html"
+            controller: "loginCtrl"
         })
         .when('/registro_estudiantes', {
-            templateUrl: "Views/registration_student.html"
+            templateUrl: "Views/registration_student.html",
+            controller: "studentCtrl"
         })
         .when('/registro_asistente', {
-            templateUrl: "Views/secretary.html"
+            templateUrl: "Views/secretary.html",
+            controller: "secretaryCtrl"
         })
         .when('/registro_funcionarios', {
-            templateUrl: "Views/registration_official.html"
+            templateUrl: "Views/registration_official.html",
+            controller: "officialCtrl"
         })
         .otherwise({
             redirectTo: '/'

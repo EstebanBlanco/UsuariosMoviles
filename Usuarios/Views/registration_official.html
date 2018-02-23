@@ -12,7 +12,7 @@
                                 <i class="material-icons">person</i>
                             </span>
                                 <div class="form-line">
-                                    <input type="text" class="form-control" name="name" placeholder="Nombre completo" required="" autofocus="" aria-required="true">
+                                    <input type="text" class="form-control" ng-model="name" placeholder="Nombre completo" required="" autofocus="" aria-required="true">
                                 </div>
                             </div>
                         </div>
@@ -24,7 +24,7 @@
                                 <i class="material-icons">person</i>
                             </span>
                                 <div class="form-line">
-                                    <input type="text" class="form-control" name="lastname1" placeholder="Primer apellido" required="" autofocus="" aria-required="true">
+                                    <input type="text" class="form-control" ng-model="lastname1" placeholder="Primer apellido" required="" autofocus="" aria-required="true">
                                 </div>
                             </div>
                         </div>
@@ -36,7 +36,7 @@
                             <i class="material-icons">person</i>
                         </span>
                                 <div class="form-line">
-                                    <input type="text" class="form-control" name="lastname2" placeholder="Segundo apellido" required="" autofocus="" aria-required="true">
+                                    <input type="text" class="form-control" ng-model="lastname2" placeholder="Segundo apellido" required="" autofocus="" aria-required="true">
                                 </div>
                             </div>
                         </div>
@@ -51,7 +51,7 @@
                                     <i class="material-icons">fingerprint</i>
                                 </span>
                                 <div class="form-line">
-                                    <input type="text" class="form-control" name="id" minlength="11" placeholder="Cédula" required="" autofocus="" aria-required="true">
+                                    <input type="text" class="form-control" ng-model="id" minlength="11" placeholder="Cédula" required="" autofocus="" aria-required="true">
                                 </div>
                             </div>
                         </div>
@@ -63,7 +63,7 @@
                         <i class="material-icons">date_range</i>
                     </span>
                                 <div class="form-line">
-                                    <input type="date" placeholder="Fecha de nacimiento">
+                                    <input type="date" ng-model="dateOfBirth" placeholder="Fecha de nacimiento">
                                 </div>
                             </div>
                         </div>
@@ -75,7 +75,7 @@
                             <i class="material-icons">lock</i>
                         </span>
                                 <div class="form-line">
-                                    <input type="password" class="form-control" name="password" minlength="12" placeholder="Contraseña" required="" aria-required="true">
+                                    <input type="password" class="form-control" ng-model="password" minlength="12" placeholder="Contraseña" required="" aria-required="true">
                                 </div>
                             </div>
                         </div>
@@ -90,7 +90,7 @@
                             <i class="material-icons">home</i>
                         </span>
                                 <div class="form-line">
-                                    <textarea rows="4" class="form-control no-resize" placeholder="Dirección exacta"></textarea>
+                                    <textarea rows="4" class="form-control no-resize" ng-model="adress" placeholder="Dirección exacta"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -102,7 +102,7 @@
                             <i class="material-icons">email</i>
                         </span>
                                 <div class="form-line">
-                                    <input type="email" class="form-control" name="email" placeholder="Dirección de correo" required="" aria-required="true">
+                                    <input type="email" class="form-control" ng-model="email" placeholder="Dirección de correo" required="" aria-required="true">
                                 </div>
                             </div>
                         </div>

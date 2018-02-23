@@ -1,10 +1,9 @@
 var app = angular.module('appModule')
-    .controller('loginController', function($scope, $http, $location,$window) {
+    .controller('loginCtrl', function($scope, $http, $location, $window) {
+        $scope.username = "";
+        $scope.password = "";
 
-        $scope.username = "kembly";
-        $scope.password = "kkk";
-
-        $scope.registration = function () {
+        $scope.studentRegistration = function () {
 
         };
 

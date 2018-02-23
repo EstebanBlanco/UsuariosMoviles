@@ -1,5 +1,5 @@
 angular.module('appModule')
-.controller('secretary', function($scope) {
+.controller('secretaryCtrl', function($scope) {
     $scope.nada=function () {
         console.log("nad");
     };
