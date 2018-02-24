@@ -12,7 +12,7 @@
                                 <i class="material-icons">person</i>
                             </span>
                                 <div class="form-line">
-                                    <input type="text" class="form-control" ng-model="name" placeholder="Nombre completo" required="" autofocus="" aria-required="true">
+                                    <input type="text" class="form-control" name="name" ng-model="formDataOfficial.name" placeholder="Nombre completo" required="" autofocus="" aria-required="true">
                                 </div>
                             </div>
                         </div>
@@ -24,7 +24,7 @@
                                 <i class="material-icons">person</i>
                             </span>
                                 <div class="form-line">
-                                    <input type="text" class="form-control" ng-model="lastname1" placeholder="Primer apellido" required="" autofocus="" aria-required="true">
+                                    <input type="text" class="form-control" name="lastname1" ng-model="formDataOfficial.lastname1" placeholder="Primer apellido" required="" autofocus="" aria-required="true">
                                 </div>
                             </div>
                         </div>
@@ -36,7 +36,7 @@
                             <i class="material-icons">person</i>
                         </span>
                                 <div class="form-line">
-                                    <input type="text" class="form-control" ng-model="lastname2" placeholder="Segundo apellido" required="" autofocus="" aria-required="true">
+                                    <input type="text" class="form-control" name="lastname2" ng-model="formDataOfficial.lastname2" placeholder="Segundo apellido" required="" autofocus="" aria-required="true">
                                 </div>
                             </div>
                         </div>
@@ -51,7 +51,7 @@
                                     <i class="material-icons">fingerprint</i>
                                 </span>
                                 <div class="form-line">
-                                    <input type="text" class="form-control" ng-model="id" minlength="11" placeholder="Cédula" required="" autofocus="" aria-required="true">
+                                    <input type="text" class="form-control" name="id" ng-model="formDataOfficial.id" minlength="11" placeholder="Cédula" required="" autofocus="" aria-required="true">
                                 </div>
                             </div>
                         </div>
@@ -63,7 +63,7 @@
                         <i class="material-icons">date_range</i>
                     </span>
                                 <div class="form-line">
-                                    <input type="date" ng-model="dateOfBirth" placeholder="Fecha de nacimiento">
+                                    <input type="date" name="dateOfBirth" ng-model="formDataOfficial.dateOfBirth" placeholder="Fecha de nacimiento">
                                 </div>
                             </div>
                         </div>
@@ -75,7 +75,7 @@
                             <i class="material-icons">lock</i>
                         </span>
                                 <div class="form-line">
-                                    <input type="password" class="form-control" ng-model="password" minlength="12" placeholder="Contraseña" required="" aria-required="true">
+                                    <input type="password" class="form-control" name="password" ng-model="formDataOfficial.password" minlength="12" placeholder="Contraseña" required="" aria-required="true">
                                 </div>
                             </div>
                         </div>
@@ -90,7 +90,7 @@
                             <i class="material-icons">home</i>
                         </span>
                                 <div class="form-line">
-                                    <textarea rows="4" class="form-control no-resize" ng-model="adress" placeholder="Dirección exacta"></textarea>
+                                    <textarea rows="4" class="form-control no-resize" name="adress" ng-model="formDataOfficial.adress" placeholder="Dirección exacta"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -102,7 +102,7 @@
                             <i class="material-icons">email</i>
                         </span>
                                 <div class="form-line">
-                                    <input type="email" class="form-control" ng-model="email" placeholder="Dirección de correo" required="" aria-required="true">
+                                    <input type="email" class="form-control" name="email" ng-model="formDataOfficial.email" placeholder="Dirección de correo" required="" aria-required="true">
                                 </div>
                             </div>
                         </div>
@@ -114,11 +114,11 @@
                         <div class="form-group">
                             <div class="form-group">
                                 <div class="msg" style="margin-bottom: 7px">Sexo</div>
-                                <input name="group_sexo" type="radio" id="radio_masculino" class="radio-col-light-green">
+                                <input name="gender" ng-model="formDataOfficial.gender" type="radio" id="radio_masculino" class="radio-col-light-green">
                                 <label for="radio_masculino">Masculino</label>
-                                <input name="group_sexo" type="radio" id="radio_femenino" class="radio-col-light-green">
+                                <input name="gender" ng-model="formDataOfficial.gender" type="radio" id="radio_femenino" class="radio-col-light-green">
                                 <label for="radio_femenino">Femenino</label>
-                                <input name="group_sexo" type="radio" id="radio_otro" class="radio-col-light-green">
+                                <input name="gender" ng-model="formDataOfficial.gender" type="radio" id="radio_otro" class="radio-col-light-green">
                                 <label for="radio_otro">Otro</label>
                             </div>
                         </div>
@@ -126,11 +126,11 @@
                     <div class="col-sm-6">
                         <div class="form-group">
                             <div class="msg" style="margin-bottom: 7px">Estado civil</div>
-                            <input name="group_estado" type="radio" id="radio_soltero" class="radio-col-light-green">
+                            <input name="status" ng-model="formDataOfficial.status" type="radio" id="radio_soltero" class="radio-col-light-green">
                             <label for="radio_soltero">Soltero (a)</label>
-                            <input name="group_estado" type="radio" id="radio_casado" class="radio-col-light-green">
+                            <input name="status" ng-model="formDataOfficial.status" type="radio" id="radio_casado" class="radio-col-light-green">
                             <label for="radio_casado">Casado (a)</label>
-                            <input name="group_estado" type="radio" id="radio_viudo" class="radio-col-light-green">
+                            <input name="status" ng-model="formDataOfficial.status" type="radio" id="radio_viudo" class="radio-col-light-green">
                             <label for="radio_viudo">Otro</label>
                         </div>
                     </div>
@@ -145,7 +145,7 @@
                             <i class="material-icons">account_box</i>
                         </span>
                                 <div class="form-line">
-                                    <input type="text" class="form-control" name="carnet" placeholder="Carné funcionario" required="" autofocus="" aria-required="true">
+                                    <input type="text" class="form-control" name="carnet" ng-model="formDataOfficial.carnet" placeholder="Carné funcionario" required="" autofocus="" aria-required="true">
                                 </div>
                             </div>
                         </div>
@@ -157,7 +157,7 @@
                                 <i class="material-icons">work</i>
                             </span>
                                 <div class="form-line">
-                                    <input type="text" class="form-control" name="grade" placeholder="Grado académico" required="" autofocus="" aria-required="true">
+                                    <input type="text" class="form-control" name="grade" ng-model="formDataOfficial.grade" placeholder="Grado académico" required="" autofocus="" aria-required="true">
                                 </div>
                             </div>
                         </div>
@@ -170,25 +170,25 @@
                         <div class="row clearfix">
                             <div class="col-sm-3">
                                 <div class="form-group">
-                                    <input type="checkbox" id="checkbox_technician" class="filled-in chk-col-light-green">
+                                    <input type="checkbox" name="technician" ng-model="formDataRole.technician" id="checkbox_technician" class="filled-in chk-col-light-green">
                                     <label for="checkbox_technician">Técnico</label>
                                 </div>
                             </div>
                             <div class="col-sm-3">
                                 <div class="form-group">
-                                    <input type="checkbox" id="checkbox_admin" class="filled-in chk-col-light-green">
+                                    <input type="checkbox" name="admin" ng-model="formDataRole.admin" id="checkbox_admin" class="filled-in chk-col-light-green">
                                     <label for="checkbox_admin">Administrativo</label>
                                 </div>
                             </div>
                             <div class="col-sm-3">
                                 <div class="form-group">
-                                    <input type="checkbox" id="checkbox_driver" class="filled-in chk-col-light-green">
+                                    <input type="checkbox" name="driver" ng-model="formDataRole.driver" id="checkbox_driver" class="filled-in chk-col-light-green">
                                     <label for="checkbox_driver">Chofer</label>
                                 </div>
                             </div>
                             <div class="col-sm-3">
                                 <div class="form-group">
-                                    <input type="checkbox" id="checkbox_teacher" class="filled-in chk-col-light-green">
+                                    <input type="checkbox" name="teacher" ng-model="formDataRole.teacher" id="checkbox_teacher" class="filled-in chk-col-light-green">
                                     <label for="checkbox_teacher">Docente</label>
                                 </div>
                             </div>

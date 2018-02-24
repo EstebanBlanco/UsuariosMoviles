@@ -3,7 +3,8 @@ var app = angular.module('appModule')
         $scope.formDataLogin = {};
 
         $scope.studentRegistration = function () {
-                console.log($scope.formDataLogin.username);
+
+
         };
 
         $scope.login = function () {
