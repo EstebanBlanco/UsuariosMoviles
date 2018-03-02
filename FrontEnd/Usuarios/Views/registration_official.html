@@ -114,24 +114,24 @@
                         <div class="form-group">
                             <div class="form-group">
                                 <div class="msg" style="margin-bottom: 7px">Sexo</div>
-                                <input name="gender" ng-model="formDataOfficial.gender" type="radio" id="radio_masculino" class="radio-col-light-green">
-                                <label for="radio_masculino">Masculino</label>
-                                <input name="gender" ng-model="formDataOfficial.gender" type="radio" id="radio_femenino" class="radio-col-light-green">
-                                <label for="radio_femenino">Femenino</label>
-                                <input name="gender" ng-model="formDataOfficial.gender" type="radio" id="radio_otro" class="radio-col-light-green">
-                                <label for="radio_otro">Otro</label>
+                                <input name="gender" ng-model="formDataOfficial.gender" value="male" type="radio" id="radio_male" class="radio-col-light-green">
+                                <label for="radio_male">Masculino</label>
+                                <input name="gender" ng-model="formDataOfficial.gender" value="female" type="radio" id="radio_female" class="radio-col-light-green">
+                                <label for="radio_female">Femenino</label>
+                                <input name="gender" ng-model="formDataOfficial.gender" value="other_gender" type="radio" id="radio_other_gender" class="radio-col-light-green">
+                                <label for="radio_other_gender">Otro</label>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
                             <div class="msg" style="margin-bottom: 7px">Estado civil</div>
-                            <input name="status" ng-model="formDataOfficial.status" type="radio" id="radio_soltero" class="radio-col-light-green">
-                            <label for="radio_soltero">Soltero (a)</label>
-                            <input name="status" ng-model="formDataOfficial.status" type="radio" id="radio_casado" class="radio-col-light-green">
-                            <label for="radio_casado">Casado (a)</label>
-                            <input name="status" ng-model="formDataOfficial.status" type="radio" id="radio_viudo" class="radio-col-light-green">
-                            <label for="radio_viudo">Otro</label>
+                            <input name="status" ng-model="formDataOfficial.status" value="single" type="radio" id="radio_single" class="radio-col-light-green">
+                            <label for="radio_single">Soltero (a)</label>
+                            <input name="status" ng-model="formDataOfficial.status" value="married" type="radio" id="radio_married" class="radio-col-light-green">
+                            <label for="radio_married">Casado (a)</label>
+                            <input name="status" ng-model="formDataOfficial.status" value="other_status" type="radio" id="radio_other_status" class="radio-col-light-green">
+                            <label for="radio_other_status">Otro</label>
                         </div>
                     </div>
                 </div>
@@ -170,25 +170,25 @@
                         <div class="row clearfix">
                             <div class="col-sm-3">
                                 <div class="form-group">
-                                    <input type="checkbox" name="technician" ng-model="formDataRole.technician" id="checkbox_technician" class="filled-in chk-col-light-green">
+                                    <input type="checkbox" name="role" ng-model="formDataOfficial.role" value="technician" id="checkbox_technician" class="filled-in chk-col-light-green">
                                     <label for="checkbox_technician">Técnico</label>
                                 </div>
                             </div>
                             <div class="col-sm-3">
                                 <div class="form-group">
-                                    <input type="checkbox" name="admin" ng-model="formDataRole.admin" id="checkbox_admin" class="filled-in chk-col-light-green">
+                                    <input type="checkbox" name="role" ng-model="formDataOfficial.role" value="admin" id="checkbox_admin" class="filled-in chk-col-light-green">
                                     <label for="checkbox_admin">Administrativo</label>
                                 </div>
                             </div>
                             <div class="col-sm-3">
                                 <div class="form-group">
-                                    <input type="checkbox" name="driver" ng-model="formDataRole.driver" id="checkbox_driver" class="filled-in chk-col-light-green">
+                                    <input type="checkbox" name="role" ng-model="formDataOfficial.role" value="driver" id="checkbox_driver" class="filled-in chk-col-light-green">
                                     <label for="checkbox_driver">Chofer</label>
                                 </div>
                             </div>
                             <div class="col-sm-3">
                                 <div class="form-group">
-                                    <input type="checkbox" name="teacher" ng-model="formDataRole.teacher" id="checkbox_teacher" class="filled-in chk-col-light-green">
+                                    <input type="checkbox" name="role" ng-model="formDataOfficial.role" value="teacher" id="checkbox_teacher" class="filled-in chk-col-light-green">
                                     <label for="checkbox_teacher">Docente</label>
                                 </div>
                             </div>
@@ -201,23 +201,23 @@
                     <div class="col-sm-2 col-sm-offset-1">
                         <div class="form-group">
                             <div>
-                                <input type="checkbox" id="checkbox_a" class="filled-in chk-col-light-green">
+                                <input type="checkbox" name="license" id="checkbox_a" class="filled-in chk-col-light-green">
                                 <label for="checkbox_a">Tipo A</label>
                             </div>
                             <div>
-                                <input name="group_A" type="radio" id="radio_a1" class="radio-col-light-green">
+                                <input name="group_A" ng-model="formDataDriverLicense.a" value="a1" type="radio" id="radio_a1" class="radio-col-light-green">
                                 <label for="radio_a1">A1</label>
                             </div>
                             <div>
-                                <input name="group_A" type="radio" id="radio_a2" class="radio-col-light-green">
+                                <input name="group_A" ng-model="formDataDriverLicense.a" value="a2" type="radio" id="radio_a2" class="radio-col-light-green">
                                 <label for="radio_a2">A2</label>
                             </div>
                             <div>
-                                <input name="group_A" type="radio" id="radio_a3" class="radio-col-light-green">
+                                <input name="group_A" ng-model="formDataDriverLicense.a" value="a3" type="radio" id="radio_a3" class="radio-col-light-green">
                                 <label for="radio_a3">A3</label>
                             </div>
                             <div>
-                                <input name="group_A" type="radio" id="radio_a4" class="radio-col-light-green">
+                                <input name="group_A" ng-model="formDataDriverLicense.a" value="a4" type="radio" id="radio_a4" class="radio-col-light-green">
                                 <label for="radio_a4">A4</label>
                             </div>
                         </div>
@@ -225,23 +225,23 @@
                     <div class="col-sm-2">
                         <div class="form-group">
                             <div>
-                                <input type="checkbox" id="checkbox_b" class="filled-in chk-col-light-green">
+                                <input type="checkbox" name="license" id="checkbox_b" class="filled-in chk-col-light-green">
                                 <label for="checkbox_b">Tipo B</label>
                             </div>
                             <div>
-                                <input name="group_B" type="radio" id="radio_b1" class="radio-col-light-green">
+                                <input name="group_B" ng-model="formDataDriverLicense.b" value="b1" type="radio" id="radio_b1" class="radio-col-light-green">
                                 <label for="radio_b1">B1</label>
                             </div>
                             <div>
-                                <input name="group_B" type="radio" id="radio_b2" class="radio-col-light-green">
+                                <input name="group_B" ng-model="formDataDriverLicense.b" value="b2" type="radio" id="radio_b2" class="radio-col-light-green">
                                 <label for="radio_b2">B2</label>
                             </div>
                             <div>
-                                <input name="group_B" type="radio" id="radio_b3" class="radio-col-light-green">
+                                <input name="group_B" ng-model="formDataDriverLicense.b" value="b3" type="radio" id="radio_b3" class="radio-col-light-green">
                                 <label for="radio_b3">B3</label>
                             </div>
                             <div>
-                                <input name="group_B" type="radio" id="radio_b4" class="radio-col-light-green">
+                                <input name="group_B" ng-model="formDataDriverLicense.b" value="b4" type="radio" id="radio_b4" class="radio-col-light-green">
                                 <label for="radio_b4">B4</label>
                             </div>
                         </div>
@@ -249,15 +249,15 @@
                     <div class="col-sm-2">
                         <div class="form-group">
                             <div>
-                                <input type="checkbox" id="checkbox_c" class="filled-in chk-col-light-green">
+                                <input type="checkbox" name="license" id="checkbox_c" class="filled-in chk-col-light-green">
                                 <label for="checkbox_c">Tipo C</label>
                             </div>
                             <div>
-                                <input name="group_C" type="radio" id="radio_c1" class="radio-col-light-green">
+                                <input name="group_C" ng-model="formDataDriverLicense.c" value="c1" type="radio" id="radio_c1" class="radio-col-light-green">
                                 <label for="radio_c1">C1</label>
                             </div>
                             <div>
-                                <input name="group_C" type="radio" id="radio_c2" class="radio-col-light-green">
+                                <input name="group_C" ng-model="formDataDriverLicense.c" value="c2" type="radio" id="radio_c2" class="radio-col-light-green">
                                 <label for="radio_c2">C2</label>
                             </div>
                         </div>
@@ -265,19 +265,19 @@
                     <div class="col-sm-2">
                         <div class="form-group">
                             <div>
-                                <input type="checkbox" id="checkbox_d" class="filled-in chk-col-light-green">
+                                <input type="checkbox"  name="license" id="checkbox_d" class="filled-in chk-col-light-green">
                                 <label for="checkbox_d">Tipo D</label>
                             </div>
                             <div>
-                                <input name="group_D" type="radio" id="radio_d1" class="radio-col-light-green">
+                                <input name="group_D" ng-model="formDataDriverLicense.d" value="d1" type="radio" id="radio_d1" class="radio-col-light-green">
                                 <label for="radio_d1">D1</label>
                             </div>
                             <div>
-                                <input name="group_D" type="radio" id="radio_d2" class="radio-col-light-green">
+                                <input name="group_D" ng-model="formDataDriverLicense.d" value="d2" type="radio" id="radio_d2" class="radio-col-light-green">
                                 <label for="radio_d2">D2</label>
                             </div>
                             <div>
-                                <input name="group_D" type="radio" id="radio_d3" class="radio-col-light-green">
+                                <input name="group_D" ng-model="formDataDriverLicense.d" value="d3" type="radio" id="radio_d3" class="radio-col-light-green">
                                 <label for="radio_d3">D3</label>
                             </div>
                         </div>
@@ -285,27 +285,20 @@
                     <div class="col-sm-2">
                         <div class="form-group">
                             <div>
-                                <input type="checkbox" id="checkbox_e" class="filled-in chk-col-light-green">
+                                <input type="checkbox" name="license" id="checkbox_e" class="filled-in chk-col-light-green">
                                 <label for="checkbox_e">Tipo E</label>
                             </div>
                             <div>
-                                <input name="group_E" type="radio" id="radio_e1" class="radio-col-light-green">
+                                <input name="group_E" ng-model="formDataDriverLicense.e" value="e1" type="radio" id="radio_e1" class="radio-col-light-green">
                                 <label for="radio_e1">E1</label>
                             </div>
                             <div>
-                                <input name="group_E" type="radio" id="radio_e2" class="radio-col-light-green">
+                                <input name="group_E" ng-model="formDataDriverLicense.e" value="e2" type="radio" id="radio_e2" class="radio-col-light-green">
                                 <label for="radio_e2">E1</label>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <!--<div class="form-group">-->
-                <!--<div class="msg" style="margin-bottom: 7px">Fecha de nacimiento</div>-->
-                <!--<div class="form-line">-->
-                <!--<input type="text" class="datepicker form-control" placeholder="Please choose a date..." data-dtp="dtp_NWVMs">-->
-                <!--</div>-->
-                <!--</div>-->
 
                 <div class="row clearfix">
                     <div class="col-sm-6">
@@ -326,6 +319,13 @@
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <div>
+                    <pre>
+                        {{ formDataOfficial | json }} <br>
+                        {{ formDataDriverLicense | json }}
+                    </pre>
                 </div>
             </form>
         </div>
