@@ -1,12 +1,15 @@
 angular.module('appModule')
     .controller('secretaryCtrl', function($scope) {
 
+        //******************************************************INICIO Obtencion de datos y validaciones de atos
         //verifica el radio que esta seleccionado
         // true= agregar -- false=eliminar
         var radio;
         var sede;
         var departamento;
         var JSON;/// simulacion de la petición
+
+        $scope.allSelected=true; //verifica
 
         //verifican el estado del radioButton
         $scope.radioTrue=function () {
@@ -36,12 +39,19 @@ angular.module('appModule')
                     var cedula=document.getElementById('DNI_secretary').value;
                     if(cedula!="")
                     {
+                        console.log("nada");
                         //prueba de como se va a almacenar en un json
                         JSON=cedula+","+sede+","+departamento;
+                        $scope.allSelected= true;
                     }
-                    else{alert("Verifique llenar la cédula");}
+                    else{
+                        alert("Verifique llenar la cédula");
+                        $scope.allSelected= false;
+                    }
                 }
-                else{alert("Verifique llenar los campos Sede y/o Departamento");}
+                else{alert("Verifique llenar los campos Sede y/o Departamento");
+                    $scope.allSelected= false;
+                }
             }
             if(radio==false) // esta es la opción eliminar
             {
@@ -52,12 +62,19 @@ angular.module('appModule')
                     {
                         //prueba de como se va a almacenar en un json
                         JSON=cedula+","+sede+","+departamento;
+                        $scope.allSelected= true;
                     }
-                    else{alert("Verifique llenar la cédula");}
+                    else{
+                        alert("Verifique llenar la cédula");
+                        $scope.allSelected= false;
+                    }
                 }
-                else{alert("Verifique llenar los campos Sede y/o Departamento");}
+                else{alert("Verifique llenar los campos Sede y/o Departamento");
+                    $scope.allSelected= false;
+                }
             }
-            if(radio==undefined) {alert("No se ha seleccionado ninguna opción");}
+            if(radio==undefined) {alert("No se ha seleccionado ninguna opción");
+                $scope.allSelected= false;}
         }
 
         //verifico que se cumpla el segundo formulario de confirmacion del correo
@@ -75,5 +92,40 @@ angular.module('appModule')
         $scope.limpiarForm = function(){
             document.getElementById('secretary-form').reset();
             document.getElementById('DNI_secretary').value = '';
+            document.getElementById('secretary-email').value = '';
         }
+        //****************************************************** FIN Obtencion de datos y validaciones de atos
+
+        //****************************************************** INICIO ENVIO DE CORREO
+
+        $scope.emailSend=function ()  {
+            alert("entro!");
+
+            var myform = $("form#myform");
+            myform.submit(function(event){
+                event.preventDefault();
+
+                var params = myform.serializeArray().reduce(function(obj, item) {
+                    obj[item.name] = item.value;
+                    return obj;
+                }, {});
+
+                // Change to your service ID, or keep using the default service
+                var service_id = "default_service";
+
+                var template_id = "correo_de_aceptacion";
+                myform.find("button").text("Enviando...");
+                emailjs.send(service_id,template_id,params)
+                    .then(function(){
+                        alert("Sent!");
+                        myform.find("button").text("Exitoso");
+                    }, function(err) {
+                        alert("Send email failed!\r\n Response:\n " + JSON.stringify(err));
+                        myform.find("button").text("Send");
+                    });
+                return false;
+            });
+        }
+
+
     });
