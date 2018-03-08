@@ -1,16 +1,11 @@
 var sqlConect = require('../ConexionDBs/query.js');
 
 //revisa el nombre y la contraseña del usuario.
-exports.getInfoEstudianteAppDevesa = function getInfoEstudianteAppDevesa(data, callback) {
-    sqlConect.getUserLogin(data.cedula, function(resultado) {
+exports.obtenerInfoEstudiante = function obtenerInfoEstudiante(data, callback) {
+    sqlConect.getInfoEstudiante(data.cedula, data.codigoPeticion, function(resultado) { //Colocar un codigo de peticion para saber que App solicita el dato, y asi variar lo que se retorna
         if (resultado.success){
             console.log(resultado.message)
-            callback({
-                success: true,
-                data: resultado.info,
-                message: resultado.message,
-                msgCode: 200,
-            })
+            
         }
         else{
             callback({

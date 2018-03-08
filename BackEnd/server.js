@@ -6,7 +6,7 @@ var loginCtrl = require('./Controladores/controladorLogin');
 var registroCtrl = require('./Controladores/controladorRegistro');
 
 //Controlador del módulo de personas
-var estudianteCtrl = require('./Controladores/controladorAppDevesa');
+var gestionInfoCtrl = require('./Controladores/controladorGestionInfo');
 
 /****************************************************************/
 //Configuraci�n del servidor.
@@ -41,7 +41,7 @@ app.put('/registroFuncionario', registroCtrl.regFuncionario);
 //app.get('/getDepartamentBySede',registroCtrl.obtenerDepartamentoPorSede);
 
 //Endpoints App Devesa
-app.post('/obtenerInfoEstudiante', estudianteCtrl.infoDevesa);
+app.post('/obtenerInfoEstudiante', gestionInfoCtrl.obtenerInfoEstudiante);
 
 //Pone el servidor en escucha de peticiones,lo levanta en el puerto requerido.
 server.listen(port, function() {

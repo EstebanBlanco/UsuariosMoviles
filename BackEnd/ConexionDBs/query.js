@@ -329,10 +329,10 @@ exports.postStudentUser = function postStudentUser(userInfo, callback) {
 
 }
 
-//Devesa Procs
-exports.getInfoEstudianteAppDevesa = function getInfoEstudianteAppDevesa(cedula, callback) {
-    console.log(cedula)
-    var request = new Request('obtenerInfoEstudianteAppDevesa', function(err) {
+//Information Management Procs
+exports.getInfoEstudiante = function getInfoEstudianteAppDevesa(cedula, codigoPeticion, callback) {
+    console.log(cedula, codigoPeticion)
+    var request = new Request('obtenerInfoEstudiante', function(err) {
         console.log(err)
         if (err) {
             callback({
