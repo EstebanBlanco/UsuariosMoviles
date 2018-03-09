@@ -201,11 +201,11 @@
                     <div class="col-sm-2 col-sm-offset-1">
                         <div class="form-group">
                             <div>
-                                <input type="checkbox" name="license" id="checkbox_a" class="filled-in chk-col-light-green">
+                                <input type="checkbox" ng-model="formDataDriverLicense.check_A" name="license" id="checkbox_a" ng-checked="checked" ng-click="checked = !checked" class="filled-in chk-col-light-green">
                                 <label for="checkbox_a">Tipo A</label>
                             </div>
                             <div>
-                                <input name="group_A" ng-model="formDataDriverLicense.a" value="a1" type="radio" id="radio_a1" class="radio-col-light-green">
+                                <input name="group_A" ng-model="formDataDriverLicense.a" value="a1" type="radio" id="radio_a1" ng-checked="checked" ng-click="checked = !checked" class="radio-col-light-green">
                                 <label for="radio_a1">A1</label>
                             </div>
                             <div>
@@ -331,3 +331,107 @@
         </div>
     </div>
 </div>
+
+<!--<div class="row clearfix">
+                    <div class="msg" style="margin-bottom: 7px">Licencias</div>
+                    <div class="col-sm-2 col-sm-offset-1">
+                        <div class="form-group">
+                            <div>
+                                <input type="checkbox" name="license" id="checkbox_a" class="filled-in chk-col-light-green">
+                                <label for="checkbox_a">Tipo A</label>
+                            </div>
+                            <div>
+                                <input name="group_A" ng-model="formDataDriverLicense.a" value="a1" type="radio" id="radio_a1" class="radio-col-light-green">
+                                <label for="radio_a1">A1</label>
+                            </div>
+                            <div>
+                                <input name="group_A" ng-model="formDataDriverLicense.a" value="a2" type="radio" id="radio_a2" class="radio-col-light-green">
+                                <label for="radio_a2">A2</label>
+                            </div>
+                            <div>
+                                <input name="group_A" ng-model="formDataDriverLicense.a" value="a3" type="radio" id="radio_a3" class="radio-col-light-green">
+                                <label for="radio_a3">A3</label>
+                            </div>
+                            <div>
+                                <input name="group_A" ng-model="formDataDriverLicense.a" value="a4" type="radio" id="radio_a4" class="radio-col-light-green">
+                                <label for="radio_a4">A4</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            <div>
+                                <input type="checkbox" name="license" id="checkbox_b" class="filled-in chk-col-light-green">
+                                <label for="checkbox_b">Tipo B</label>
+                            </div>
+                            <div>
+                                <input name="group_B" ng-model="formDataDriverLicense.b" value="b1" type="radio" id="radio_b1" class="radio-col-light-green">
+                                <label for="radio_b1">B1</label>
+                            </div>
+                            <div>
+                                <input name="group_B" ng-model="formDataDriverLicense.b" value="b2" type="radio" id="radio_b2" class="radio-col-light-green">
+                                <label for="radio_b2">B2</label>
+                            </div>
+                            <div>
+                                <input name="group_B" ng-model="formDataDriverLicense.b" value="b3" type="radio" id="radio_b3" class="radio-col-light-green">
+                                <label for="radio_b3">B3</label>
+                            </div>
+                            <div>
+                                <input name="group_B" ng-model="formDataDriverLicense.b" value="b4" type="radio" id="radio_b4" class="radio-col-light-green">
+                                <label for="radio_b4">B4</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            <div>
+                                <input type="checkbox" name="license" id="checkbox_c" class="filled-in chk-col-light-green">
+                                <label for="checkbox_c">Tipo C</label>
+                            </div>
+                            <div>
+                                <input name="group_C" ng-model="formDataDriverLicense.c" value="c1" type="radio" id="radio_c1" class="radio-col-light-green">
+                                <label for="radio_c1">C1</label>
+                            </div>
+                            <div>
+                                <input name="group_C" ng-model="formDataDriverLicense.c" value="c2" type="radio" id="radio_c2" class="radio-col-light-green">
+                                <label for="radio_c2">C2</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            <div>
+                                <input type="checkbox"  name="license" id="checkbox_d" class="filled-in chk-col-light-green">
+                                <label for="checkbox_d">Tipo D</label>
+                            </div>
+                            <div>
+                                <input name="group_D" ng-model="formDataDriverLicense.d" value="d1" type="radio" id="radio_d1" class="radio-col-light-green">
+                                <label for="radio_d1">D1</label>
+                            </div>
+                            <div>
+                                <input name="group_D" ng-model="formDataDriverLicense.d" value="d2" type="radio" id="radio_d2" class="radio-col-light-green">
+                                <label for="radio_d2">D2</label>
+                            </div>
+                            <div>
+                                <input name="group_D" ng-model="formDataDriverLicense.d" value="d3" type="radio" id="radio_d3" class="radio-col-light-green">
+                                <label for="radio_d3">D3</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            <div>
+                                <input type="checkbox" name="license" id="checkbox_e" class="filled-in chk-col-light-green">
+                                <label for="checkbox_e">Tipo E</label>
+                            </div>
+                            <div>
+                                <input name="group_E" ng-model="formDataDriverLicense.e" value="e1" type="radio" id="radio_e1" class="radio-col-light-green">
+                                <label for="radio_e1">E1</label>
+                            </div>
+                            <div>
+                                <input name="group_E" ng-model="formDataDriverLicense.e" value="e2" type="radio" id="radio_e2" class="radio-col-light-green">
+                                <label for="radio_e2">E1</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>-->

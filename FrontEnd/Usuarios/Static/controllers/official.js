@@ -4,7 +4,14 @@ var app = angular.module('appModule')
 
         //deben ser listas
         $scope.formDataDriverLicense = {};
-        $scope.formDataRole = {};
+        $scope.formDataRole = [];
+
+        $scope.checkLicense = function (chk) {
+            if(chk){
+
+            }
+        };
+
 
         $scope.formDataDriver = [
             {
