@@ -1,62 +1,68 @@
 
 <div class="admins-box">
+    <!--<div class="card" style="text-align: center;width: 30%; margin: auto; margin-top: 10%; border-radius: 5px;"> -->
     <div class="card" style="text-align: center;width: 30%; margin: auto; margin-top: 10%; border-radius: 5px;">
         <div class="body">
-            <form id="admin" method="POST" novalidate="novalidate">
+            <form id="adminsForm" method="POST" novalidate="novalidate">
 
                 <h3>Administradores</h3><br>
+                <br>
 
-                <!--Seleccionar sede-->
-                <h4 class="panel-title">Seleccione Sede </h4>
-                <div class="btn-group bootstrap-select form-control show-tick dropup">
-                    <button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" title="-- Please select --" aria-expanded="false"><span class="filter-option pull-left">-- Please select --</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button>
-                    <select  id="sede_administrador" class="form-control show-tick" tabindex="-98"></select>
-                </div><br><br>
-
-                <!--Seleccionar Funcionario-->
-                <h4 class="panel-title">Seleccione Funcionario </h4>
-                <div class="btn-group bootstrap-select form-control show-tick dropup">
-                    <button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" title="-- Please select --" aria-expanded="false"><span class="filter-option pull-left">-- Please select --</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button>
-                    <select  id="administrador" class="form-control show-tick" tabindex="-98"></select>
-                </div><br><br>
-
-                <!--Asignar Aplicacion-->
                 <div class="panel panel-default">
+
+                    <!--Selecionar una sede-->
                     <div class="panel-heading">
-                        <h4 class="panel-title">Asignar Aplicación</h4>
-                    </div>
-                    <div class="panel-body">
-                        <h5 class="panel-title">Seleccione Aplicacion </h5>
-                        <div class="btn-group bootstrap-select form-control show-tick dropup">
-                            <button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" title="-- Please select --" aria-expanded="false"><span class="filter-option pull-left">-- Please select --</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button>
-                            <select  id="select-sede" class="form-control show-tick" tabindex="-98"></select>
-                        </div><br><br>
-                        
-                        <button type="button" class="btn btn-block btn-lg bg-pink waves-effect" data-toggle="modal" data-target="#defaultModal">Asignar</button>
-                        
-                    </div>
-                </div><br>
-  
-                <!--Quitar Aplicacion-->
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                      <h4 class="panel-title">Quitar aplicaciones asignadas</h4>
-                    </div>
-                    <div class="panel-body">
-                        <h5 class="panel-title">Aplicaciones Asignadas</h5>
-                        <div class="list-group">
-                            <a href="#" class="list-group-item disabled">
-                                App 1
-                            </a>
-                            <a href="#" class="list-group-item">App 2</a>
-                            <a href="#" class="list-group-item">App 3</a>
-                            <a href="#" class="list-group-item">App 4</a>
-                            <a href="#" class="list-group-item">App 5</a>
-                          </div>
+                        <h4 class="panel-title">Seleccione Sede </h4>
                     </div>
 
-                    <button type="button" class="btn btn-block btn-lg bg-pink waves-effect" data-toggle="modal" data-target="#defaultModal">Quitar</button>
+                    <div class="panel-body">
+                        <select id="selectSede" class="form-control show-tick" tabindex="-98" data-ng-options="o.name for o in sedesOptions" data-ng-model="selectedSedeOption">
+                            <option value="" disabled selected>Seleccione una sede</option>
+                            <option value="sede1">Sede 1</option>
+                            <option value="sede2">Sede 2</option>
+                        </select>
+                    </div><br>
 
+                    <!--Selecionar un funcionario-->
+                    <div class="panel-heading">
+                        <h4 class="panel-title">Seleccione Funcionario </h4>
+                    </div>
+
+                    <div class="panel-body">
+                        <select id="selectFuncionario" class="form-control show-tick" tabindex="-98" data-ng-options="o.name for o in funcionariosOptions" data-ng-model="selectedFuncOption">
+                            <option value="" disabled selected>Seleccione un funcionario</option>
+                            <option value="fun1">Fun 1</option>
+                            <option value="fun2">Fun 2</option>
+                        </select>
+
+                    </div><br>
+
+                    <div class="panel panel-default"> </div>
+
+                    <!--Radiobutton asignar o desasignar aplicacion-->
+                    <h4>¿Qué acción desea hacer?</h4><br>
+                    <form class="form-group">
+                        <input name="group1" type="radio" id="radio_asignar" class="radio-col-light-green" ng-click="asignarFuntion()">
+                        <label for="radio_asignar">Asignar</label>
+                        <input name="group1" type="radio" id="radio_desasignar" class="radio-col-light-green" ng-click="desasignarFuntion()">
+                        <label for="radio_desasignar">Desasignar</label>
+                    </form><br><br>
+
+
+                    <!--Asignar o desasignar aplicacion-->
+
+                    <div class="panel-body">
+                        <h4 class="panel-title">Seleccione Aplicación</h4>
+                        <br>
+                        <select id="selectAplicacion" class="form-control show-tick" tabindex="-98" data-ng-options="o.name for o in aplicacionesOptions" data-ng-model="selectedAplicOption">
+                            <option value="" disabled selected>Seleccione una aplicación</option>
+                            <option value="app1">App 1</option>
+                            <option value="app2">App 2</option>
+                        </select><br><br>
+
+                        <button id = "idBotonAplicar" type="button" class="btn btn-block btn-lg bg-pink waves-effect" data-toggle="modal" data-target="#defaultModal" ng-click="recogerFomulario()" ng-bind="terms.label" >Asignar</button>
+
+                    </div>
                 </div><br>
 
             </form>

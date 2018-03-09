@@ -1,86 +1,102 @@
 angular.module('appModule')
     .controller('adminsCtrl', function($scope) {
 
-        //--------------------------- Obtencion de datos y validaciones de datos ---------------------------------------
+        //----------------- Variables Globales ----------------------------
 
+        var radio;//verifica el radio que esta seleccionado, true = asignar -- false = desasignar
         var sede;
-        var administrador;
-        var JSON;/// simulacion de la petición
+        var funcionario;
+        var aplicacion;
+        //pone el botón en blanco
+        $scope.terms = {
+            label : "ok"
+        }
 
+        //--------------------------- Carga de datos a la vista----- ---------------------------------------
 
-        //optiener la sede seleccionada
-        var selectSede = document.getElementById('sede_administrador'); selectSede.addEventListener('change', function(){ var selectedOptionSede = this.options[selectSede.selectedIndex];
-            sede=selectedOptionSede.text;
-        });
-        //optiener el administrador seleccionado
-        var selectAdministrador = document.getElementById('administrador'); selectAdministrador.addEventListener('change', function(){ var selectedOptionDep = this.options[selectAdministrador.selectedIndex];
-            administrador=selectedOptionDep.text;
-        });
+        //Carga las sedes a su respectivo select
+        $scope.sedesOptions = [{ name: "Seleccione una sede", id: 0 }, { name: "Cartaguito Campeon", id: 1 }, { name: "San Carlitos a primera", id: 2 }];
+        $scope.selectedSedeOption = $scope.sedesOptions[0];
 
-        // recoger los datos del formulario
-        $scope.recogerFormulario=function () {
+        //Carga los funcionarios a su respectivo select
+        $scope.funcionariosOptions = [{ name: "Seleccione un funcionario", id: 0 }, { name: "Paco pedro", id: 1 }, { name: "Anacleto", id: 2 }];
+        $scope.selectedFuncOption = $scope.funcionariosOptions[0];
 
-            //verifica que los select sede y funcionario estén seleccionados
-            if(sede!==undefined && administrador!==undefined)
-            {
+        // +++++++++ Cambia las aplicaciones en funcion de asignar o desasignar ++++++++++++++
 
+        //carga todas las aplicaciones existentes al select de aplicaciones
+        $scope.asignarFuntion = function () {
+            radio = true; // true para asignar aplicacion al recoger formulario
+            //cargar todas las aplicaciones al select de aplicaciones
+            $scope.aplicacionesOptions = [{ name: "Seleccione una aplicación", id: 0 }, { name: "comedor", id: 1 }, { name: "ctec", id: 2 }, { name: "biblioteca", id: 2 }];
+            $scope.selectedAplicOption = $scope.aplicacionesOptions[0];
+            //cambiar el texto del boton a asignar
+            $scope.terms = {
+                label : "Asignar"
             }
-            else{
-                alert("Verifique llenar los campos Sede y/o Departamento");
-                $scope.allSelected= false;
+        }
+
+        //carga las aplicaciones asignadasXFuncionario al select de aplicaciones
+        $scope.desasignarFuntion = function () {
+            radio = false; // false para desasignar una aplicacion al recoger formulario
+            //cargar las aplicaciones x funcionario seleccionado al combo de aplicaciones
+            $scope.aplicacionesOptions = [{ name: "Seleccione una aplicación", id: 0 },{ name: "comedor", id: 1 }, { name: "ctec", id: 2 }];
+            //cambiar el texto del boton a Desasignar
+
+            $scope.terms = {
+                label : "Desasignar"
             }
 
         }
 
-        //verifico que se cumpla el segundo formulario de confirmacion del correo
-        $scope.veriCorreo=function () {
-            var correo=document.getElementById('secretary-email').value;
-            if(correo!=""){
-                JSON=JSON+","+correo;
-                alert("Listo");
-                console.log(JSON);
+
+        //--------------------------- Obtencion y validacion de datos ---------------------------------------
+
+        //optiener la sede seleccionada cada vez que cambia de seleccion
+        var selectSede = document.getElementById('selectSede'); selectSede.addEventListener('change', function(){ var selectedOptionSede = this.options[selectSede.selectedIndex];
+            sede = selectedOptionSede.text;
+        });
+
+        //optiener el administrador seleccionado cada vez que cambia de seleccion
+        var selectFuncionario = document.getElementById('selectFuncionario'); selectFuncionario.addEventListener('change', function(){ var selectedOptionFuncionario = this.options[selectFuncionario.selectedIndex];
+            funcionario = selectedOptionFuncionario.text;
+        });
+
+        //optiener el aplicacion seleccionado cada vez que cambia de seleccion
+        var selectAplicacion = document.getElementById('selectAplicacion'); selectAplicacion.addEventListener('change', function(){ var selectedOptionAplicacion = this.options[selectAplicacion.selectedIndex];
+            aplicacion = selectedOptionAplicacion.text;
+        });
+
+        // recoger los datos del formulario
+        $scope.recogerFomulario = function () {
+            //validar si todos los select tiene algo y si el radio tambien
+
+            if(radio === true) { //Asigna una aplicacion
+                console.log(sede + "  asignado");
+                console.log(funcionario + "  asignado");
+                console.log(aplicacion + "  asignado");
+
+            }else{ //desasignar aplicacion
+                console.log(sede + "  desasignado");
+                console.log(funcionario + "  desasignado");
+                console.log(aplicacion + "  desasignado");
+
             }
-            else{alert("Verifique llenar el correo");}
+
+
         }
 
         //limpiar el formulario
         $scope.limpiarForm = function(){
-            document.getElementById('secretary-form').reset();
-            document.getElementById('DNI_secretary').value = '';
-            document.getElementById('secretary-email').value = '';
+            document.getElementById('adminsForm').reset();
         }
-        //****************************************************** FIN Obtencion de datos y validaciones de atos
 
-        //****************************************************** INICIO ENVIO DE CORREO
 
-        $scope.emailSend=function ()  {
-            alert("entro!");
 
-            var myform = $("form#myform");
-            myform.submit(function(event){
-                event.preventDefault();
 
-                var params = myform.serializeArray().reduce(function(obj, item) {
-                    obj[item.name] = item.value;
-                    return obj;
-                }, {});
 
-                // Change to your service ID, or keep using the default service
-                var service_id = "default_service";
 
-                var template_id = "correo_de_aceptacion";
-                myform.find("button").text("Enviando...");
-                emailjs.send(service_id,template_id,params)
-                    .then(function(){
-                        alert("Sent!");
-                        myform.find("button").text("Exitoso");
-                    }, function(err) {
-                        alert("Send email failed!\r\n Response:\n " + JSON.stringify(err));
-                        myform.find("button").text("Send");
-                    });
-                return false;
-            });
-        }
+
 
 
     });
