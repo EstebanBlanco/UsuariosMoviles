@@ -10,9 +10,9 @@ exports.revisarLogin = function revisarLogin(sesion, callback) {
         if (resultado.success){
         console.log(resultado.message)
            sqlConect.getUserHeadquarter(sesion.body.username, function(sedesResultado) {
-                //console.log(sedesResultado)
+                //console.log(sedesResultado.data.length)
 
-                if (sedesResultado.data.length == 0) {
+                if (sedesResultado.data.length == 1) { // La petición genera un JSON basura adicional que viene vacío. La lista nunca viene vacía
                     callback({
                         success: false,
                         data: [],
@@ -21,21 +21,36 @@ exports.revisarLogin = function revisarLogin(sesion, callback) {
                     })
                 } 
                 else {
-                    // Se hace efectiva la creacion del token una vez encontrado el usuario y su sede
+                    sedesResultado.data.pop() // Sacar JSON basura, solucion temporal
 
-                    var payload = {
-                        sub: resultado.data[0].username,
-                        iat: moment().unix(),
-                        exp: moment().add(14, "days").unix(),
-                    };
-                    var token = jwt.encode(payload, config.TOKEN_SECRET);
-                    callback({
-                        success: true,
-                        data: { 'token': token, 'userData': resultado.data[0]},
-                        message: resultado.message,
-                        msgCode: 200,
-                        sedes: sedesResultado.data
-                    })
+                    sqlConect.getUserApps(sesion.body.username, function(appsResultado) {
+
+                        listaApps = [];
+
+                        if (appsResultado.data.length > 1) { // La petición genera un JSON adicional que viene vacío. La lista nunca viene vacía
+                           listaApps = appsResultado.data
+                           listaApps.pop() // Sacar JSON basura, solucion temporal
+                        } 
+
+                        // Se hace efectiva la creacion del token una vez encontrado el usuario y su sede
+
+                        var payload = {
+                            sub: resultado.data[0].username,
+                            iat: moment().unix(),
+                            exp: moment().add(14, "days").unix(),
+                        };
+                        var token = jwt.encode(payload, config.TOKEN_SECRET);
+                        callback({
+                            success: true,
+                            data: { 'token': token, 'userData': resultado.data[0]},
+                            message: resultado.message,
+                            msgCode: 200,
+                            sedes: sedesResultado.data,
+                            apps: listaApps
+                        })
+                    });
+
+                    
                 }
             });
         }

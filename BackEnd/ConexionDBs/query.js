@@ -66,6 +66,26 @@ exports.getUserCareers = function getUserCareers(cedula, callback) {
     sqlConect.callProcedure(request, callback)
 }
 
+exports.getUserApps = function getUserApps(cedula, callback) {
+    var request = new Request('obtenerAppsPersona', function(err) {
+        console.log(err)
+        if (err) {
+            callback({
+                success: false,
+                data: err,
+                error: request.error,
+                title: 'Error',
+                message: 'Error cargando los datos',
+                type: 'error'
+            });
+        }
+    });
+
+    request.addParameter('idPersona', TYPES.VarChar, cedula);
+    request.addOutputParameter('success', TYPES.Bit);
+    sqlConect.callProcedure(request, callback)
+}
+
 //Registro procs
 exports.postFuncUser = function postFuncUser(userInfo, callback) {
     var request = new Request('insertarFuncionarioPersona', function(err) {
