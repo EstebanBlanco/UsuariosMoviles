@@ -15,12 +15,12 @@ angular.module('appModule')
         //--------------------------- Carga de datos a la vista----- ---------------------------------------
 
         //Carga las sedes a su respectivo select
-        $scope.sedesOptions = [{ name: "Seleccione una sede", id: 0 }, { name: "Cartaguito Campeon", id: 1 }, { name: "San Carlitos a primera", id: 2 }];
-        $scope.selectedSedeOption = $scope.sedesOptions[0];
+        $scope.sedesOptions = [{ name: "Cartaguito Campeon", id: 1 }, { name: "San Carlitos a primera", id: 2 }];
+        //$scope.selectedSedeOption = $scope.sedesOptions[0];
 
         //Carga los funcionarios a su respectivo select
-        $scope.funcionariosOptions = [{ name: "Seleccione un funcionario", id: 0 }, { name: "Paco pedro", id: 1 }, { name: "Anacleto", id: 2 }];
-        $scope.selectedFuncOption = $scope.funcionariosOptions[0];
+        $scope.funcionariosOptions = [{ name: "Paco pedro", id: 1 }, { name: "Anacleto", id: 2 }];
+        //$scope.selectedFuncOption = $scope.funcionariosOptions[0];
 
         // +++++++++ Cambia las aplicaciones en funcion de asignar o desasignar ++++++++++++++
 
@@ -28,8 +28,8 @@ angular.module('appModule')
         $scope.asignarFuntion = function () {
             radio = true; // true para asignar aplicacion al recoger formulario
             //cargar todas las aplicaciones al select de aplicaciones
-            $scope.aplicacionesOptions = [{ name: "Seleccione una aplicación", id: 0 }, { name: "comedor", id: 1 }, { name: "ctec", id: 2 }, { name: "biblioteca", id: 2 }];
-            $scope.selectedAplicOption = $scope.aplicacionesOptions[0];
+            $scope.aplicacionesOptions = [{ name: "comedor", id: 1 }, { name: "ctec", id: 2 }, { name: "biblioteca", id: 2 }];
+            //$scope.selectedAplicOption = $scope.aplicacionesOptions[0];
             //cambiar el texto del boton a asignar
             $scope.terms = {
                 label : "Asignar"
@@ -40,9 +40,8 @@ angular.module('appModule')
         $scope.desasignarFuntion = function () {
             radio = false; // false para desasignar una aplicacion al recoger formulario
             //cargar las aplicaciones x funcionario seleccionado al combo de aplicaciones
-            $scope.aplicacionesOptions = [{ name: "Seleccione una aplicación", id: 0 },{ name: "comedor", id: 1 }, { name: "ctec", id: 2 }];
+            $scope.aplicacionesOptions = [{ name: "comedor", id: 1 }, { name: "ctec", id: 2 }];
             //cambiar el texto del boton a Desasignar
-
             $scope.terms = {
                 label : "Desasignar"
             }
