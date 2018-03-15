@@ -16,7 +16,7 @@ exports.revisarLogin = function revisarLogin(sesion, callback) {
                     callback({
                         success: false,
                         data: [],
-                        message: resultado.message,
+                        message: "El usuario no pertenece a ninguna sede.",
                         msgCode: 400
                     })
                 } 
