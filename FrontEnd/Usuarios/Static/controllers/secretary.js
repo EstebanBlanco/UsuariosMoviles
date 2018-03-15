@@ -9,14 +9,17 @@ angular.module('appModule')
         var departamento;
         var JSON;/// simulacion de la petición
 
+        $scope.variableAgregarElimina=true; //dependiendo del radio button me muetra diferentes ventanas extendidas
         $scope.allSelected=true; //verifica
 
         //verifican el estado del radioButton
         $scope.radioTrue=function () {
             radio=true;
+            $scope.variableAgregarElimina=true;
         }
         $scope.radioFalse=function () {
             radio=false;
+            $scope.variableAgregarElimina=false;
         }
 
         //se optiene la sede seleccionada
@@ -39,7 +42,6 @@ angular.module('appModule')
                     var cedula=document.getElementById('DNI_secretary').value;
                     if(cedula!="")
                     {
-                        console.log("nada");
                         //prueba de como se va a almacenar en un json
                         JSON=cedula+","+sede+","+departamento;
                         $scope.allSelected= true;
