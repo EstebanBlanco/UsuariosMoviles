@@ -19,10 +19,13 @@ angular.module('appModule',["ngRoute"])
                 controller: "secretaryCtrl"
             })
             .when('/', {
+                templateUrl: "Views/admins.html",
+                controller: "adminsCtrl"
+            })
+
+            /*.when('/', {
                 templateUrl: "Views/registration_official.html",
                 controller: "officialCtrl"
-            })
-            */
             .otherwise({
                 redirectTo: '/'
             });
