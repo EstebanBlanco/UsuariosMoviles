@@ -2,11 +2,6 @@ angular.module('appModule',["ngRoute"])
     .config(['$routeProvider',function($routeProvider){
         $routeProvider
 
-            .when('/', {
-                templateUrl: "Views/secretary.html",
-                controller: "secretaryCtrl"
-            })
-            /*
             .when('/registro_funcionarios', {
                 templateUrl: "Views/login.html",
                 controller: "loginCtrl"
@@ -19,14 +14,15 @@ angular.module('appModule',["ngRoute"])
                 templateUrl: "Views/secretary.html",
                 controller: "secretaryCtrl"
             })
-            .when('/', {
+            .when('/admins_apps', {
                 templateUrl: "Views/admins.html",
                 controller: "adminsCtrl"
             })
 
-            /*.when('/', {
+            .when('/', {
                 templateUrl: "Views/registration_official.html",
                 controller: "officialCtrl"
+            })
             .otherwise({
                 redirectTo: '/'
             });
