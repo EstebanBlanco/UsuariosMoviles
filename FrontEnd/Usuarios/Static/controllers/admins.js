@@ -75,10 +75,46 @@ angular.module('appModule')
                 console.log(funcionario + "  asignado");
                 console.log(aplicacion + "  asignado");
 
+                $http({
+                    method: "POST",
+                    url: 'http://localhost:8080/doLogin',
+                    data: {'sede': sede,'funcionario':funcionario, 'aplicacion':aplicacion}
+                })
+                    .then(function successCallback(response) {
+                        if (response.data.message === 200){
+                            //mandar alerta existosa
+                            alert(response.data.data);
+
+                        }
+                        else{
+                            //mandar alerta de fallo
+                            console.log(response.data.data);
+                            alert(response.data.data);
+                        }
+                    });
+
             }else{ //desasignar aplicacion
                 console.log(sede + "  desasignado");
                 console.log(funcionario + "  desasignado");
                 console.log(aplicacion + "  desasignado");
+
+                $http({
+                    method: "POST",
+                    url: 'http://localhost:8080/doLogin',
+                    data: {'sede': sede,'funcionario':funcionario, 'aplicacion':aplicacion}
+                })
+                    .then(function successCallback(response) {
+                        if (response.data.message === 200){
+                            //mandar alerta existosa
+                            alert(response.data.data);
+
+                        }
+                        else{
+                            //mandar alerta de fallo
+                            console.log(response.data.data);
+                            alert(response.data.data);
+                        }
+                    });
 
             }
 
