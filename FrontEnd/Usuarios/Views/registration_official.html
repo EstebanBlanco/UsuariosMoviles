@@ -204,21 +204,11 @@
                                 <input type="checkbox" ng-model="formDataDriverLicense.check_A" name="license" id="checkbox_a" ng-checked="checked" ng-click="checked = !checked" class="filled-in chk-col-light-green">
                                 <label for="checkbox_a">Tipo A</label>
                             </div>
-                            <div>
-                                <input name="group_A" ng-model="formDataDriverLicense.a" value="a1" type="radio" id="radio_a1" ng-checked="checked" ng-click="checked = !checked" class="radio-col-light-green">
-                                <label for="radio_a1">A1</label>
-                            </div>
-                            <div>
-                                <input name="group_A" ng-model="formDataDriverLicense.a" value="a2" type="radio" id="radio_a2" class="radio-col-light-green">
-                                <label for="radio_a2">A2</label>
-                            </div>
-                            <div>
-                                <input name="group_A" ng-model="formDataDriverLicense.a" value="a3" type="radio" id="radio_a3" class="radio-col-light-green">
-                                <label for="radio_a3">A3</label>
-                            </div>
-                            <div>
-                                <input name="group_A" ng-model="formDataDriverLicense.a" value="a4" type="radio" id="radio_a4" class="radio-col-light-green">
-                                <label for="radio_a4">A4</label>
+
+
+                            <div ng-repeat="l in lista1">
+                                <input name="group_A" ng-model="$parent.lista1" id="{{l}}" type="radio" value="{{l}}" class="radio-col-light-green">{{i}}
+                                <label for="{{l}}">{{l}}</label>
                             </div>
                         </div>
                     </div>

@@ -12,11 +12,14 @@ var app = angular.module('appModule')
             }
         };
 
+        $scope.lista1 = [
+            "a1","a2","a3","a4"
+        ];
+
 
         $scope.formDataDriver = [
             {
-                "id":"A",
-                "items":["a1","a2","a3","a4"]
+                "A":["a1","a2","a3","a4"]
             },{
                 "id":"B",
                 "items":["b1","b2","b3","b4"]
