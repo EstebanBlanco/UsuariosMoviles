@@ -109,6 +109,7 @@ angular.module('appModule')
 
                 var params = myform.serializeArray().reduce(function(obj, item) {
                     obj[item.name] = item.value;
+
                     return obj;
                 }, {});
 
@@ -129,5 +130,12 @@ angular.module('appModule')
             });
         }
 
+
+        function persona(cedula, departamento,sede, correo) {
+            this.cedula=cedula;
+            this.sede=sede;
+            this.departamento=departamento;
+            this.correo=correo;
+        }
 
     });
