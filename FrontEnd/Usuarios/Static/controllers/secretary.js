@@ -7,10 +7,10 @@ angular.module('appModule')
         var radio;
         var sede;
         var departamento;
-        var JSON;/// simulacion de la petición
+
 
         $scope.variableAgregarElimina=true; //dependiendo del radio button me muetra diferentes ventanas extendidas
-        $scope.allSelected=true; //verifica
+        $scope.allSelected=true; //verifica que todos el formulario este lleno
 
         //verifican el estado del radioButton
         $scope.radioTrue=function () {
@@ -33,17 +33,12 @@ angular.module('appModule')
 
         // verifico que se cumpla el formulario
         $scope.veriRadio=function () {
-            if(radio==true)
-            {
+            if(radio==true) {
                 //verifico que los select(departamento y sede) esten llenos
-                if(sede!=undefined && departamento!=undefined)
-                {
+                if(sede!=undefined && departamento!=undefined) {
                     //optengo la cedula
                     var cedula=document.getElementById('DNI_secretary').value;
-                    if(cedula!="")
-                    {
-                        //prueba de como se va a almacenar en un json
-                        JSON=cedula+","+sede+","+departamento;
+                    if(cedula!="") {
                         $scope.allSelected= true;
                     }
                     else{
@@ -60,10 +55,7 @@ angular.module('appModule')
                 if(sede!=undefined && departamento!=undefined)
                 {
                     var cedula=document.getElementById('DNI_secretary').value;
-                    if(cedula!="")
-                    {
-                        //prueba de como se va a almacenar en un json
-                        JSON=cedula+","+sede+","+departamento;
+                    if(cedula!="") {
                         $scope.allSelected= true;
                     }
                     else{
@@ -83,11 +75,12 @@ angular.module('appModule')
         $scope.veriCorreo=function () {
             var correo=document.getElementById('secretary-email').value;
             if(correo!=""){
-                JSON=JSON+","+correo;
-                alert("Listo");
-                console.log(JSON);
+
+                //creo el objetoPersona: si paso la prueba de veriRadio: entro a veriCorreo
+                var json = new persona(document.getElementById('DNI_secretary').value,sede,departamento,correo);
+                return json;
             }
-            else{alert("Verifique llenar el correo");}
+            else{alert("Verifique llenar el correo"); return null;}
         }
 
         //limpiar el formulario
@@ -98,10 +91,13 @@ angular.module('appModule')
         }
         //****************************************************** FIN Obtencion de datos y validaciones de atos
 
-        //****************************************************** INICIO ENVIO DE CORREO
 
+
+        //****************************************************** INICIO ENVIO DE CORREO
         $scope.emailSend=function ()  {
-            alert("entro!");
+
+            var objetoUsuario = $scope.veriCorreo();
+            console.log(objetoUsuario );
 
             var myform = $("form#myform");
             myform.submit(function(event){
@@ -122,6 +118,8 @@ angular.module('appModule')
                     .then(function(){
                         alert("Sent!");
                         myform.find("button").text("Exitoso");
+                        //limpio el input correo
+                        document.getElementById('secretary-email').value = '';
                     }, function(err) {
                         alert("Send email failed!\r\n Response:\n " + JSON.stringify(err));
                         myform.find("button").text("Send");
@@ -131,11 +129,12 @@ angular.module('appModule')
         }
 
 
-        function persona(cedula, departamento,sede, correo) {
-            this.cedula=cedula;
-            this.sede=sede;
-            this.departamento=departamento;
-            this.correo=correo;
+        //creacion de objeto persona
+        function persona(pcedula,psede,pdepartamento,pcorreo) {
+            this.cedula=pcedula;
+            this.sede=psede;
+            this.departamento=pdepartamento;
+            this.correo=pcorreo;
         }
 
     });
