@@ -23,6 +23,10 @@ angular.module('appModule',["ngRoute"])
                 templateUrl: "Views/registration_official.html",
                 controller: "officialCtrl"
             })
+            .when('/main', {
+                templateUrl: "Views/main.html",
+                controller: "mainCtrl"
+            })
             .otherwise({
                 redirectTo: '/'
             });
