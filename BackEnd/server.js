@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 //Middleware utilizado para generar el token y validarlo
 var middleware = require('./Autenticacion/middleware');
-//Se direccionan las vistas. EL mismos server levantas las vistas.
+//Se direccionan las vistas. EL mismos server levantar las vistas.
 app.use('/', express.static(__dirname + '/../Front-end'));
 
 

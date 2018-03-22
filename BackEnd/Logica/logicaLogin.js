@@ -12,7 +12,7 @@ exports.revisarLogin = function revisarLogin(sesion, callback) {
            sqlConect.getUserHeadquarter(sesion.body.username, function(sedesResultado) {
                 //console.log(sedesResultado.data.length)
 
-                if (sedesResultado.data.length == 1) { // La petición genera un JSON basura adicional que viene vacío. La lista nunca viene vacía
+                if (sedesResultado.data.length == 0) { // La petición genera un JSON basura adicional que viene vacío. La lista nunca viene vacía
                     callback({
                         success: false,
                         data: [],

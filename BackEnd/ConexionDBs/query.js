@@ -147,7 +147,7 @@ exports.postFuncUser = function postFuncUser(userInfo, callback) {
                 }
             }
 
-            if (userInfo.listaRoles){
+            if (userInfo.listaLicencias){
                 contadorLics = userInfo.listaLicencias.length;
                 for (lic in userInfo.listaLicencias){
                     var request = new Request('insertarLicenciaFuncPersona', function(err) {
