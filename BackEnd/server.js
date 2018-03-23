@@ -8,6 +8,9 @@ var registroCtrl = require('./Controladores/controladorRegistro');
 //Controlador del módulo de personas
 var gestionInfoCtrl = require('./Controladores/controladorGestionInfo');
 
+//Controlador del módulo de registro de funcionarios desde secretaria
+var preregistroSecretaryCtrl = require('./Controladores/controladorPreregistroSecretary'); //controladorPreregistroSecretary
+
 /****************************************************************/
 //Configuraci�n del servidor.
 bodyParser = require('body-parser');
@@ -33,6 +36,7 @@ app.post('/login', loginCtrl.login);
 app.put('/registroEstudiante', registroCtrl.regEstudiante);
 app.put('/registroSecretaria', registroCtrl.regSecretaria);
 app.put('/registroFuncionario', registroCtrl.regFuncionario);
+app.put('/preregistroSecretaryCtrl',preregistroSecretaryCtrl.preRegFuncionario);
 //app.get('/getDepartmentPerson/:idP',registroCtrl.obtenerDepartamentoPersona);
 //app.post('/setPersonToDepartment/:idP/:nombreDep',registroCtrl.asignarPersonaDepartamento);
 //app.post('/cambiarContra/:newPass/:idP',registroCtrl.cambiarContrasena);
