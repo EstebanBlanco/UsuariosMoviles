@@ -24,7 +24,7 @@ var app = angular.module('appModule')
         ];
 
         //fill the license driver
-        $scope.formDataDriver = [
+        $scope.dataDriver = [
             {
                 id:"A",
                 ch: 1,
@@ -48,19 +48,33 @@ var app = angular.module('appModule')
             }
         ];
 
-        //PENDIENTE
-        $scope.isChecked = function (buttonID, checkBoxID) {
-            var radioButtonArray = document.getElementsByName(buttonID);
-            var checkBoxSelected = document.getElementsByName(checkBoxID);
+        //verify the checked roles
+        $scope.roleList = [];
+        $scope.roleChecked = function() {
+            for(var i=0; i < this.dataRoles.length; i++){
+                if(document.getElementById(this.dataRoles[i].id).checked) this.roleList.push(this.dataRoles[i].id);
+            }
+        };
 
-            if(checkBoxSelected.checked){
-                for (var i=0; i<radioButtonArray.length; i++)
-                {
-                    var radioButton = radioButtonArray[i];
-                    radioButton.checked = false;
-                    radioButton.disabled = true;
+        //verify the checked licenses
+        $scope.licenseList = [];
+        $scope.licenseChecked = function() {
+            for(var i=0; i < this.dataDriver.length; i++){
+                var radioButtonArray = document.getElementsByName(this.dataDriver[i].id);
+                for (var j=0; j<radioButtonArray.length; j++){
+                    if(radioButtonArray[j].checked) this.licenseList.push(radioButtonArray[j].id);
                 }
             }
+        };
 
+        //disable or enable radio groups
+        $scope.isChecked = function (buttonID, checkBoxID) {
+            var radioButtonArray = document.getElementsByName(buttonID);
+            var checkBoxSelected = document.getElementById(checkBoxID);
+            //if checkbox true then enable radio group
+            for (var j=0; j<radioButtonArray.length; j++){
+                var radioButton= radioButtonArray[j];
+                radioButton.disabled = !checkBoxSelected.checked; radioButton.checked = false;
+            }
         };
     });
