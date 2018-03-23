@@ -40,6 +40,11 @@ angular.module('appModule')
                     var cedula=document.getElementById('DNI_secretary').value;
                     if(cedula!="") {
                         $scope.allSelected= true;
+
+                        //seteo los parametros en el formulario de envio de emaji
+                        document.getElementById('secretary-cedula-respaldo').value= cedula;
+                        document.getElementById('secretary-departamento-respaldo').value= departamento;
+                        document.getElementById('secretary-sede-respaldo').value= sede;
                     }
                     else{
                         alert("Verifique llenar la cédula");
@@ -88,6 +93,9 @@ angular.module('appModule')
             document.getElementById('secretary-form').reset();
             document.getElementById('DNI_secretary').value = '';
             document.getElementById('secretary-email').value = '';
+            document.getElementById('secretary-cedula-respaldo').value= '';
+            document.getElementById('secretary-departamento-respaldo').value= '';
+            document.getElementById('secretary-sede-respaldo').value= '';
         }
         //****************************************************** FIN Obtencion de datos y validaciones de atos
 
