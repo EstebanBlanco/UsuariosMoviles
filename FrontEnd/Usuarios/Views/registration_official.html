@@ -59,11 +59,11 @@
                     <div class="col-sm-4">
                         <div class="form-group">
                             <div class="input-group">
-                    <span class="input-group-addon">
-                        <i class="material-icons">date_range</i>
-                    </span>
+                                <span class="input-group-addon">
+                                    <i class="material-icons">date_range</i>
+                                </span>
                                 <div class="form-line">
-                                    <input type="date" name="dateOfBirth" ng-model="formDataOfficial.dateOfBirth" placeholder="Fecha de nacimiento">
+                                    <input type="date" id="dateB" ng-model="formDataOfficial.dateOfBirth" name="dateOfBirth" max="3000-12-31" min="1900-01-01" class="form-control">
                                 </div>
                             </div>
                         </div>
